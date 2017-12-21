@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="address=no;">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="icon" href="images/favicon.ico">
+    <title>Title</title>
+</head>
+<body>
+<a href="javascript:;" id="openApp">贴吧客户端</a>
+<script language="javascript">
+    document.getElementById('openApp').onclick = function(e){
+        if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+            var loadDateTime = new Date();
+            window.setTimeout(function() {
+                    var timeOutDateTime = new Date();
+                    if(timeOutDateTime - loadDateTime < 5000) {
+                        window.location = "https://itunes.apple.com/cn/app/id477927812";
+                    } else {
+                        window.close();
+                    }
+                },
+                25);
+            window.location = "weixin:// ";
+        } else if(navigator.userAgent.match(/android/i)) {
+            var state = null;
+            try {
+                state = window.open("com.baidu.tieba://");
+            } catch(e) {
+            }
+            if(state) {
+                alert(1);
+                window.close();
+            } else {
+                alert(2);
+                window.location = "http://dldir1.qq.com/weixin/android/weixin656android1020.apk";
+            }
+        }
+    }
+</script>
+</body>
+</html>
