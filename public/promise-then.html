@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+//    console.log(Promise);//打印字符串，使用方法比较类似C的printf格式输出
+//    console.info(Promise);//打印以感叹号字符开始的信息，使用方法和log相同
+    console.dir(Promise);//打印一条以三角形符号开头的语句，可以点击三角展开查看对象的属性。
+    
+
+    function createP() {
+        let p = new Promise(function (resolve, reject) {
+            console.log('创建promise对象');
+//            resolve('resolve');//如果执行了resolve()，PromiseStatus状态就是resolved
+            reject('reject');//如果执行了resolve()，PromiseStatus状态就是rejected
+        });
+        console.log(p);
+        return p;
+    }
+    
+    console.log(createP());
+    
+</script>
+</body>
+</html>
