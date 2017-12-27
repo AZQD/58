@@ -12,7 +12,20 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <title>Title</title>
 </head>
+<style type="text/css">
+    video{
+        background-color: red;
+    }
+</style>
 <body>
-
+<video src="video/test.mp4" controls autoplay  id="video"></video>
+<script type="text/javascript">
+    var video = document.getElementById("video");
+    console.log(video.ondurationchange);//null
+    video.ondurationchange = function (ev) {
+        console.log('11');
+    }
+    console.log(video.ondurationchange);//function
+</script>
 </body>
 </html>
