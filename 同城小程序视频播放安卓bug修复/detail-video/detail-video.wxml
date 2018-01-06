@@ -1,0 +1,7 @@
+<view class="videoWrap" wx-if="{{videoSrc}}">
+  <video id="myVideo" controls autoplay style="width:{{windowWidth+'px'}};height: {{windowHeight+'px'}}"
+         src="{{videoSrc}}"
+         >
+  </video>
+</view>
+
