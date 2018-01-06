@@ -1,4 +1,0 @@
-/* pages/video-test/video-test.wxss */
-.videoWrap {
-  height: 100vh;
-  width: 100vw; }
