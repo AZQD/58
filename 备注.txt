@@ -1,0 +1,2 @@
+打开Terminal:
+npm start
