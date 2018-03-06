@@ -3,4 +3,4 @@ const consoleFun2 = function () {
 };
 module.exports = {
     consoleFun:consoleFun2
-}
+};
