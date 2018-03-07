@@ -12,6 +12,20 @@
     <title>Title</title>
 </head>
 <body>
-test234567891012
+...params
+
+<script type="text/javascript">
+    /**.
+     * ..params的用法：
+     * 可变参数，参数个数可以任意变化
+     */
+    var params = params || {c:3}
+    var obj = {
+        a:1,
+        b:2,
+        ...params
+    }
+    console.log(obj);
+</script>
 </body>
 </html>
