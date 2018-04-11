@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;">
+    <meta name="viewport"
+          content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="format-detection" content="address=no;">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    /*console.log({
+      fn:function () {},
+      afn:()=>{},
+      gfn:function *f(){}
+    });*/
+
+    /**总结
+     *  *f是什么 generate函数
+     *
+     */
+    // [[FunctionLocation]]
+    // [[constructor]]
+    // [[call]]
+    // [[Scope]]
+    // [[prototype]]
+
+
+    // 箭头函数afn有call,scope，没有super,argument
+
+
+    // 动态相关： this/arguments/super/new target
+
+
+    /*function fn(a,b) {
+
+    }*/
+
+
+    /*function fn1() {
+      this.test = 'fn1'
+      console.log(this);
+      function fn2() {
+        this.test = 'fn2'
+        console.log(this);
+        let fn3 =()=>{
+          this.test = 'fn3'
+          console.log(this);
+        }
+        fn3()
+      }
+      fn2()
+    }
+    fn1()
+    console.log(test);*/
+    
+    
+    /*let fn =(a)=>{
+      console.log(1);
+      console.log(this);
+      console.log(arguments);
+    }
+    fn(1)*/
+    /*function fn(a) {
+      console.log(1);
+      console.log(this);
+      console.log(arguments);
+    }
+    fn(1)*/
+
+    // call调用
+
+    /*function fn1() {
+      console.log(arguments);
+      arguments[0].nickname = 'fn1'
+      let fn2 = function () {
+        console.log(arguments);
+        arguments[0].nickname = 'fn2'
+      }
+      fn2()
+    }
+    let obj = {}
+    fn1(obj)*/
+
+
+</script>
+</body>
+</html>
