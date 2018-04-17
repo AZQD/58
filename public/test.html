@@ -88,6 +88,83 @@
     let obj = {}
     fn1(obj)*/
 
+    /*JS字面量
+    Number, String , Object, Array, Regex
+    *
+    *
+    * */
+    /*let obj = {
+      1:2
+    }
+    let arr = [1,2]
+    obj[arr] = 1111
+    obj['7'+'8'] = 78
+    console.log(obj);*/
+    // console.log(obj.1);
+  
+  
+  /*console.log(Object.getPrototypeOf({}));//Object.prototype
+  console.log(Object.getPrototypeOf(Object));//Function.prototype
+  console.log();
+  Object.setPrototypeOf = function (obj) {
+    return obj.__proto__
+  }
+
+    Object.getPrototypeOf = function (obj, value) {
+      obj.__proto__ = value
+    }*/
+
+    /*Object.prototype.fun = function(){
+      return 'test'
+    }
+    
+    let a = 1
+    let b = {}
+    let c = []
+  console.log(a.fun());
+  console.log(b.fun());
+  console.log(c.fun());*/
+
+
+    /*function fun() {
+      console.log(arguments);
+      console.log(arguments.__proto__);//Object.prototype
+      console.log(arguments.__proto__ === Object.prototype);//true
+    }
+    fun()*/
+
+
+
+    // extend ,assign
+    /**extend浅拷贝
+     * @param destination
+     * @param source
+     * @returns {*}
+     * 参考：https://www.jianshu.com/p/04b1d88dabf2
+     */
+  var extend = function (destination, source) {
+    for(var key in source){
+      destination[key] = source[key]
+    }
+    return destination
+  }
+  let newObj = extend({a:1}, {a:2, b:2, c:3})
+  console.log(newObj);
+
+    /**
+     * Object.assign
+     * 参考：https://blog.csdn.net/DeepLies/article/details/52915143
+     * @type {{a: number}}
+     */
+  var obj1 = {a:1}
+  var obj2 = {a:2, b:2}
+  var obj3 = {a:3, b:4, c:5}
+  Object.assign(obj1,obj2,obj3)
+  console.log(obj1);
+
+
+
+
 
 </script>
 </body>
