@@ -32,7 +32,17 @@
     console.log('fail', result);
   })
 
-  //参考文档：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000
+
+/**
+ * .then()方法使Promise原型链上的方法，它包含两个参数方法，分别是已成功resolved的回调和已失败rejected的回调
+ * .catch()的作用是捕获Promise的错误，与then()的rejected回调作用几乎一致。但是由于Promise的抛错具有冒泡性质，
+ * 能够不断传递，这样就能够在下一个catch()中统一处理这些错误。同时catch()也能够捕获then()中抛出的错误，所以
+ * 建议不要使用then()的rejected回调，而是统一使用catch()来处理错误
+ */
+
+  //参考文档：
+// https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000
+  //http://www.hangge.com/blog/cache/detail_1638.html (很形象的例子)
 </script>
 </body>
 </html>
