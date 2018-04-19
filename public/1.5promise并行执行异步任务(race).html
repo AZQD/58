@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+/**'
+ 有些时候，多个异步任务是为了容错。比如，同时向两个URL读取用户的个人信息，只需要获得先返回的结果即可。这种情况下，用Promise.race()实现：
+ */
+let promise1 = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    resolve(1)
+  }, 1000)
+});
+let promise2 = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    resolve(2)
+  }, 500)
+});
+
+//promise2结果执行出来之后，promise1就不执行了。
+// 由于promise2执行较快，Promise的then()将获得结果'2'。promise1仍在继续执行，但执行结果将被丢弃。
+Promise.race([promise1, promise2]).then(function (result) {
+  console.log(result);
+});
+
+</script>
+</body>
+</html>
