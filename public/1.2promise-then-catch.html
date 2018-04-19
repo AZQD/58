@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+/**
+ * Promise学习 2018年4月19日15:16:37
+ */
+  console.dir(Promise);
+  console.log(typeof Promise);//function
+  console.log(typeof Promise.prototype);//object
+
+/**创建promise对象
+ * @type {Promise<any>}
+ */
+  let promise = new Promise(function (resolve, reject) {
+    let num = Math.random()*10;
+    setTimeout(function () {
+      if(num<5){
+        resolve(num)
+      }else{
+        reject(num)
+      }
+    }, 0)
+  });
+  promise.then(function (result) {
+    console.log('success', result);
+  }).catch(function (result) {
+    console.log('fail', result);
+  })
+
+</script>
+</body>
+</html>
