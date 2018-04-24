@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html;">
+  <meta name="viewport"
+        content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <meta name="format-detection" content="address=no;">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  //箭头函数
+  /*let fun = (param = 1)=>{
+    console.log(param);
+  }
+  fun()*/
+
+  //async和await应用
+  /*let promise1 = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve(1)
+    }, 2000)
+  })
+  
+  let fun = async function () {
+    let result = await promise1
+    console.log(result);
+    console.log(2);
+  }
+  fun()*/
+
+let sleep = function (time) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            resolve();
+        }, time);
+    })
+};
+let howLongToSleep = async function () {
+     // 在这里使用起来就像同步代码那样直观
+     console.time('end');
+     await sleep(3000);  //sleep 为一个执行需要耗费 3s 的函数
+     console.timeEnd('end');
+ };
+
+ howLongToSleep();
+
+</script>
+</body>
+</html>

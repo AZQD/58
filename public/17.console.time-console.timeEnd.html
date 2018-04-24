@@ -13,11 +13,17 @@
   <title>Title</title>
 </head>
 <body>
+
 <script type="text/javascript">
-  let fun = () =>{
-    console.log(1);
+  /**
+   * 功能：统计一段代码的执行时间
+   * 使用方法：这两个方法所使用的参数必须相同，参数值可以为任何字符串
+   */
+  console.time('betweenTime')
+  for(let i = 0; i<1000; i++){
+      console.log(1);
   }
-  fun()
+  console.timeEnd('betweenTime')
 
 </script>
 </body>
