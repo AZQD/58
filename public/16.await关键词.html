@@ -34,19 +34,20 @@
   }
   fun()*/
 
-let sleep = function (time) {
-    return new Promise(function (resolve, reject) {
-        setTimeout(function () {
-            resolve();
-        }, time);
-    })
-};
-let howLongToSleep = async function () {
-     // 在这里使用起来就像同步代码那样直观
-     console.time('end');
-     await sleep(3000);  //sleep 为一个执行需要耗费 3s 的函数
-     console.timeEnd('end');
- };
+  let sleep = function (time) {
+      return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+              resolve(666);
+          }, time);
+      })
+  };
+  let howLongToSleep = async function () {
+       // 在这里使用起来就像同步代码那样直观
+       console.time('end');
+       let result = await sleep(3000);  //sleep 为一个执行需要耗费 3s 的函数
+        console.log(result);
+       console.timeEnd('end');
+   };
 
  howLongToSleep();
 
