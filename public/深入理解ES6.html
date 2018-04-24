@@ -160,26 +160,90 @@
      * @returns {*}
      * 参考：https://www.jianshu.com/p/04b1d88dabf2
      */
-    var extend = function (destination, source) {
+    /*var extend = function (destination, source) {
       for(var key in source){
         destination[key] = source[key]
       }
       return destination
     }
-    let newObj = extend({a:1}, {a:2, b:2, c:3})
+    let newObj = extend({a:1, d:4}, {a:2, b:2, c:3})
     console.log(newObj);
 
-    /**
+    /!**
      * Object.assign
      * 参考：https://blog.csdn.net/DeepLies/article/details/52915143
      * @type {{a: number}}
-     */
+     *!/
     var obj1 = {a:1}
     var obj2 = {a:2, b:2}
     var obj3 = {a:3, b:4, c:5}
     Object.assign(obj1,obj2,obj3)
-    console.log(obj1);
+    console.log(obj1);*/
 
+
+    /**
+     * 总结：
+     * 作用域：全局，函数，块级，闭包；
+     * 全局
+     *
+     * 块级作用域：let,const
+     */
+
+    /*var d = 4
+    function fun1() {
+      var a = 1
+      function fun2(b) {
+        var c = 3
+        {
+          let t = 10
+          console.log(a,b,c,d);
+        }
+      }
+      fun2()
+    }
+    fun1()*/
+
+
+    /**
+     * TDZ, let/coast/
+     */
+
+    //繁引号
+    //块级作用域
+
+  //${表达式}
+
+    /**
+     *
+     */
+    // fn函数和箭头函数区别：
+  // 箭头函数无this,无argument,无constructor
+
+
+  // 函数类别：fn, 箭头函数， function *(){} async function
+
+    /*等价
+  obj.__proto__
+  obj.getPrototypeOf*/
+
+    // console.log(Number.prototype);
+    // console.log(typeof 123);
+    // console.log(typeof Array);
+    // console.log(typeof Function);
+
+  // this argument , construtor, scope
+
+  //调试必须会
+  
+  function extend(newObj, oldObj) {
+    for(let item in oldObj){
+      newObj[item] = oldObj[item]
+    }
+    return newObj
+  }
+  var result = extend({},{a:2})
+  console.log(result);
+  // console.log(Global);
 
 
 </script>
