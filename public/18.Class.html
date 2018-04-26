@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html;">
+  <meta name="viewport"
+        content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <meta name="format-detection" content="address=no;">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <title>类</title>
+</head>
+<body>
+<script type="text/javascript">
+
+  /*function Point(x, y) {
+    this.x = 1;
+    this.y = 2;
+  }*/
+
+  /**
+   * 类的数据类型就是函数，类本身就指向构造函数。
+   * 使用的时候，也是直接对类使用new命令，跟构造函数的用法完全一致。
+   * 构造函数的prototype属性，在 ES6 的“类”上面继续存在。事实上，类的所有方法都定义在类的prototype属性上面。
+   */
+  /*class Point {
+    constructor(x,y){
+      this.x = 1;
+      this.y = 2;
+    }
+  }
+  let p = new Point();
+  console.log(typeof Point);//function
+  console.dir(Point.prototype.constructor === Point);//true
+  console.log(p);
+  console.log(p instanceof Point);//true
+  console.log(p.hasOwnProperty('x'));//true
+  console.log(p.__proto__ === Point.prototype);//true*/
+
+
+  //类不存在变量提升，这一点与 ES5 完全不同。
+  //Bar继承Foo
+  let Foo = class FooName{
+    constructor(x){
+      this.x = 1
+    }
+  }
+  console.log(Foo.name);
+  class Bar extends Foo {}
+  let bar = new Bar()
+  console.log(bar);
+  console.log(bar.x);
+
+</script>
+</body>
+</html>
