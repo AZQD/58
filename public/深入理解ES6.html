@@ -235,7 +235,7 @@
 
   //调试必须会
   
-  function extend(newObj, oldObj) {
+  /*function extend(newObj, oldObj) {
     for(let item in oldObj){
       newObj[item] = oldObj[item]
     }
@@ -243,7 +243,58 @@
   }
   var result = extend({},{a:2})
   console.log(result);
-  // console.log(Global);
+  // console.log(Global);*/
+
+    /**2018年5月8日18:07:33
+     * 第五章：变量的解构赋值
+     * undefined在JSON字面量里面不可用；
+     * underscore js/Lodash
+     * 声明：var,let,const,function,symbal,class
+     * 赋值：=
+     *
+     * const a;//会报错，因为声明必须初始化；
+     *
+     * 结构变量 var,let,const声明必须初始化；
+     *
+     * 解构赋值表达式的值是右边的值；
+     *
+     *
+     * 赋值表达式
+     * 解构赋值表达式：对象、数组
+     */
+
+    /*let a;
+    let b = null;
+    console.log(a);
+    console.log(a__proto__);//报错
+    console.log(b__proto__);//报错*/
+
+    // let {type,name} = null //报错
+    // console.log(type);
+    // console.log(name);
+  /*let {type:type} = obj;
+  冒号后面才是变量名称*/
+  /*let {type:aa} = {type:1}
+  console.log(aa);*/ //1
+
+/*
+...表示不定元素
+
+两种用户：
+1.等号右边：
+let t = {
+  a:1,
+  ...obj
+}
+2.等号左边：
+let {...obj} = {
+  a:1,
+  b:2
+}
+* */
+
+
+
 
 
 </script>
