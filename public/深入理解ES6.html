@@ -277,6 +277,9 @@
   /*let {type:aa} = {type:1}
   console.log(aa);*/ //1
 
+    /*let {a:b} = {a:1};
+    console.log(b);*/
+
 /*
 ...表示不定元素
 
@@ -293,7 +296,44 @@ let {...obj} = {
 }
 * */
 
+    /**第六章：符号与符号属性
+     * 2018年6月1日09:33:49
+     */
+    console.dir(Symbol);
+// console.dir(typeof Symbol);//function
+/*let firstName = Symbol("description");
+let obj = {a:1};
+obj[firstName] = 'nikeName';
+console.dir(obj);
+console.dir(obj[firstName]);
+console.log(firstName);
+console.log(typeof firstName);
+for(var item in obj){
+    console.log(item);//用for...in不能遍历出符号
+}*/
 
+let firstName = Symbol('first name');
+console.log(firstName);
+console.log(typeof firstName);
+let person = {
+    [firstName]:'liming'
+}
+console.log(person);
+function test() {
+    
+}
+console.log(test);
+console.dir(Function);
+
+/*
+*属性为什么不可以枚举
+* 元编程是什么
+* 泛读
+* Xmind
+* 划重点
+* 延伸
+* */
+console.log(Object);
 
 
 
