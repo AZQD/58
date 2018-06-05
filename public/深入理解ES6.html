@@ -299,7 +299,7 @@ let {...obj} = {
     /**第六章：符号与符号属性
      * 2018年6月1日09:33:49
      */
-    console.dir(Symbol);
+    // console.dir(Symbol);
 // console.dir(typeof Symbol);//function
 /*let firstName = Symbol("description");
 let obj = {a:1};
@@ -312,7 +312,7 @@ for(var item in obj){
     console.log(item);//用for...in不能遍历出符号
 }*/
 
-let firstName = Symbol('first name');
+/*let firstName = Symbol('first name');
 console.log(firstName);
 console.log(typeof firstName);
 let person = {
@@ -324,6 +324,13 @@ function test() {
 }
 console.log(test);
 console.dir(Function);
+    let s = 'str';
+    s.replace({
+        [Symbol.replace]: function (value, replace) {
+            // return replace
+            console.log(value, replace);//value是原始值，replace是需要替换的值
+        }
+    },'string');*/
 
 /*
 *属性为什么不可以枚举
@@ -332,10 +339,54 @@ console.dir(Function);
 * Xmind
 * 划重点
 * */
-console.log(Object);
+    // 第七章 Set与Map
+/*let arr = ['a', 'b'];
+let set = new Set([arr]);
+console.log(set);
+console.log(typeof set);
+set.add(1);
+set.add(2);
+console.log(set.size);
+    set.add(2);
+    console.log(set.size);
+    console.log(set.has(1));
+    console.log('delete',set.delete(1));
+    console.log(set.has(1));
+    console.log(set.size);
+    set.clear();
+    console.log(set.size);
+    set.add('m');
+    set.add('n');
+    console.log('new set', set);
+    set.forEach(function (value, key ,onwerSet) {
+        console.log(value, key ,onwerSet);
+    })
 
+  let wrap = {
+        console(item){
+            console.log(item);
+        },
+        product(val){
+            val.forEach(function (value) {
+                this.console(value)
+            }, this)
+        }
+  }
+wrap.product(set)
 
+  let arr2 = [1,2,3,4,5,5,5,5]
+  let set2 = new Set(arr2);
+    console.log(set2);
+    // let newArr2 = Array.from(set2);
+    let newArr2 = [...set2];
+    console.log(newArr2);
+    console.log(typeof newArr2);*/
 
+// map
+/*  let map = new Map();
+  map.set('a','aa');
+  map.set('b','bb');
+  console.log(map);*/
 </script>
 </body>
 </html>
