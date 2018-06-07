@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html;">
+  <meta name="viewport"
+        content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <meta name="format-detection" content="address=no;">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <title>Title</title>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .controlBox{
+      font-size: 0;
+      position: fixed;
+      top: 50px;
+      left: 50px;
+      text-align: center;
+      background-color: blue;
+    }
+    .controlHref{
+      color: fuchsia;
+      font-size: 16px;
+    }
+    .controlBtn{
+      font-size: 16px;
+      color: red;
+      margin-top: 6px;
+    }
+      .topBox{
+        height: 500px;
+      }
+      .contentbox{
+        height: 50px;
+        line-height: 50px;
+        color: red;
+        font-size: 20px;
+        text-align: center;
+        background-color: yellow;
+      }
+      .bottombox{
+        height: 2000px;
+      }
+  </style>
+</head>
+<body>
+<div class="controlBox">
+  <a href="#contentbox" class="controlHref">通过href滑动到某个位置</a><br/>
+  <button class="controlBtn">通过jQuery滑动到某个位置</button>
+</div>
+<div class="topBox"></div>
+<div class="contentbox" id="contentbox">目标位置</div>
+<div class="bottombox"></div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+  $('.controlBtn').unbind('click').bind('click', function(){
+      let scroll_offset = $("#contentbox").offset(); //得到contentbox这个div层的offset，包含两个值，top和left
+      $("body,html").animate({
+          scrollTop:scroll_offset.top //让body的scrollTop等于contentbox的top，就实现了滚动
+      },1000);
+  });
+</script>
+</body>
+</html>
