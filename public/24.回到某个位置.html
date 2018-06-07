@@ -60,9 +60,9 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
   $('.controlBtn').unbind('click').bind('click', function(){
-      let scroll_offset = $("#contentbox").offset(); //得到contentbox这个div层的offset，包含两个值，top和left
       $("body,html").animate({
-          scrollTop:scroll_offset.top //让body的scrollTop等于contentbox的top，就实现了滚动
+          // scrollTop:0 //回到顶部
+          scrollTop:$("#contentbox").offset().top //回到某个位置
       },1000);
   });
 </script>
