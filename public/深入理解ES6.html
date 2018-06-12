@@ -394,6 +394,35 @@ set.add(obj);
 console.log(set);
 obj = null;
 console.log(set);*/
+
+/*第七章
+ */
+var arr = [111, 222, 333];
+console.log(arr);
+for(var i of arr){
+    console.log(i);
+}
+console.log(arr[Symbol.iterator]);
+console.log(arr[Symbol.iterator]());
+
+    /**
+     * 是否有默认迭代器
+     * @param obj
+     * @returns {boolean}
+     */
+    function isIterable(obj) {
+    return typeof obj[Symbol.iterator] === 'function';
+}
+console.log(isIterable(arr));
+console.log(isIterable('test'));
+console.log(isIterable({}));
+
+console.log(arr.entries());
+for(var i of arr.entries()){
+    console.log(i);
+}
+console.log(arr.keys());
+console.log(arr.values());
 </script>
 </body>
 </html>
