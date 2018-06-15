@@ -397,7 +397,7 @@ console.log(set);*/
 
 /*第七章
  */
-var arr = [111, 222, 333];
+/*var arr = [111, 222, 333];
 console.log(arr);
 for(var i of arr){
     console.log(i);
@@ -405,11 +405,11 @@ for(var i of arr){
 console.log(arr[Symbol.iterator]);
 console.log(arr[Symbol.iterator]());
 
-    /**
+    /!**
      * 是否有默认迭代器
      * @param obj
      * @returns {boolean}
-     */
+     *!/
     function isIterable(obj) {
     return typeof obj[Symbol.iterator] === 'function';
 }
@@ -422,7 +422,85 @@ for(var i of arr.entries()){
     console.log(i);
 }
 console.log(arr.keys());
-console.log(arr.values());
+console.log(arr.values());*/
+
+    /*/!**
+     * 创建迭代器
+     * @param items
+     * @returns {{next: next}}
+     *!/
+    function createIterator(items) {
+    let i = 0;
+    return {
+        next:function () {
+            let done = (i >= items.length);
+            let value = !done ? items[i++] : undefined;
+            return {
+                done,
+                value
+            }
+        }
+    }
+}
+let iterator = createIterator([11,22,33]);
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());*/
+
+    /**
+     * 生成器
+     */
+    /*function *createIterator() {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+    let iterator = createIterator();
+    console.log(iterator);
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());*/
+
+    /**
+     * 生成器
+     * @param items
+     */
+    /*function *createIterator(items) {
+        for(let i = 0; i<items.length; i++){
+            yield items[i];
+        }
+    }
+    let iterator = createIterator([11,22,33]);
+    console.log(iterator);
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());*/
+    /*let obj = {
+        createIterator : function *(items) {
+            for(let i = 0; i<items.length; i++){
+                yield items[i];
+            }
+        }
+    };*/
+    /*let obj = {
+        * createIterator(items) {
+            for (let i = 0; i < items.length; i++) {
+                yield items[i];
+            }
+        }
+    };*/
+
+    /*let collection = {
+        items: [],
+        * [Symbol.iterator]() {
+            for (let item of this.items) {
+                yield item;
+            }
+        }
+    };*/
 </script>
 </body>
 </html>
