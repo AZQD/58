@@ -501,6 +501,25 @@ console.log(iterator.next());*/
             }
         }
     };*/
+    /*var begintime_ms = new Date(); //begintime 为开始时间
+
+    setTimeout(function () {
+        var endtime_ms = new Date();   // endtime 为结束时间
+        console.log(begintime_ms);
+        console.log(endtime_ms);
+        console.log(endtime_ms - begintime_ms);
+    }, 1200)*/
+
+
+    function *fn() {
+        let a = yield 1;
+        let b = yield 2 + a;
+        return b;
+    }
+    let I = fn();
+    console.log(I.next());
+    console.log(I.next(7));
+    console.log(I.next(3));
 </script>
 </body>
 </html>
