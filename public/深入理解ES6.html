@@ -511,7 +511,7 @@ console.log(iterator.next());*/
     }, 1200)*/
 
 
-    function *fn() {
+    /*function *fn() {
         let a = yield 1;
         let b = yield 2 + a;
         return b;
@@ -519,7 +519,89 @@ console.log(iterator.next());*/
     let I = fn();
     console.log(I.next());
     console.log(I.next(7));
-    console.log(I.next(3));
+    console.log(I.next(3));*/
+
+    /**
+     *第九章：JS中的类
+     */
+
+    /**
+     * ES5 中的仿类结构
+     * @param name
+     * @constructor
+     */
+    /*function PersonType(name) {
+        this.name = name;
+    }
+    PersonType.prototype.sayName = function () {
+        console.log(this.name);
+    }
+    let person = new PersonType('Nicholas');
+    person.sayName();
+
+    console.log(person instanceof PersonType);
+    console.log(person instanceof Object);
+    console.log(person);
+    let aa = new person
+    console.log(aa);*/
+
+
+    /*class PersonClass{
+        constructor(name){
+            this.name = name;
+        }
+        sayName(){
+            console.log(this.name);
+        }
+    }
+    let person = new PersonClass('Nicholas');
+    person.sayName();
+    console.log(typeof PersonClass);//function
+    console.log(typeof PersonClass.prototype.sayName);//function*/
+
+    /*let PersonClass = class {
+        constructor(name){
+            this.name = name;
+        }
+        sayName(){
+            console.log(this.name);
+        }
+    }
+    let person = new PersonClass('Nicholas');
+    person.sayName();
+    console.log(typeof PersonClass);//function
+    console.log(typeof PersonClass.prototype.sayName);//function*/
+
+    /*let PersonClass = class PersonClass2 {
+        constructor(name){
+            this.name = name;
+        }
+        sayName(){
+            console.log(this.name);
+        }
+    }
+    let person = new PersonClass('Nicholas');
+    person.sayName();
+    console.log(typeof PersonClass);//function
+    console.log(typeof PersonClass2);//undefined*/
+
+    class CustomHTMLElement{
+        constructor(element){
+            this.element = element;
+        }
+        get htmlFun(){
+            return this.element.innerHTML;
+        }
+        set htmlFun(value){
+            return this.element = value;
+        }
+    }
+    let descriptor = Object.getOwnPropertyDescriptor(CustomHTMLElement.prototype, 'htmlFun');
+    console.log(descriptor);
+    console.log('get' in descriptor);//true
+    console.log('set' in descriptor);//true
+    console.log(descriptor.enumerable);//false
+
 </script>
 </body>
 </html>
