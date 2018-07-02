@@ -17,10 +17,23 @@
             reject('reject');//如果执行了resolve()，PromiseStatus状态就是rejected
         });
         console.log(p);
+        p.then(function () {
+            console.log(1);
+        }, function () {
+            console.log(2);
+        });
         return p;
     }
     
     console.log(createP());
+
+    //总结：
+   /**
+    * 总结
+    * 1.new Promise()接收一个参数：function(resolve, reject){}
+    * 2..then()接收两个可选参数：then(fun1, fun2) fun1为完成函数， fun2为拒绝函数；
+    * 3..catch()接收一个参数：catch(fun) fun为拒绝函数
+    */
 
 </script>
 </body>
