@@ -7,7 +7,9 @@
 <body>
 
 <script type="text/javascript">
-    var promise = new Promise(function (resolve, reject) {
+
+    //例子1
+    /*var promise = new Promise(function (resolve, reject) {
         console.log('ajax开始请求');
         setTimeout(function () {
             console.log('ajax请求成功');
@@ -18,7 +20,25 @@
         console.log('执行then', res);
     }).catch(error=>{
         console.log(error);
-    });
+    });*/
+
+
+
+    //例子2
+    let fun1 = function () {
+        return new Promise(function (resolve, reject) {
+            console.log("开始执行promise");
+            setTimeout(()=>{
+                console.log('执行promise完成');
+                resolve('success');
+            }, 2000);
+        })
+    };
+    let fun2 = async function () {
+        let result = await fun1();
+        console.log('返回结果：',result);
+    };
+    fun2();
 </script>
 </body>
 </html>
