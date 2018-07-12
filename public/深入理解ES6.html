@@ -612,6 +612,9 @@ console.log(iterator.next());*/
     // let promise = Promise.reject(10);
 
   //第十二章 代理与反射接口
+    //
+
+
 
     //创建一个简单的代理
   /*let target = {};
@@ -626,6 +629,99 @@ console.log(iterator.next());*/
     console.log(target);*/
 
   //使用 set 陷阱函数验证属性值
+    /*let target = {
+        name: 'target'
+    };
+    // console.log(target.hasOwnProperty('name'));
+    let proxy = new Proxy(target, {
+        set(tarpTarget, key, value, receiver){
+            console.log(tarpTarget, key, value, receiver);
+            if(!tarpTarget.hasOwnProperty(key)){
+                if(isNaN(value)){
+                    throw new Error(`${value}必须是数字类型`)
+                }
+            }
+            return Reflect.set(tarpTarget, key, value, receiver);
+        }
+    });
+    proxy.name = 12;
+    console.log(target);
+    console.log(proxy);
+
+    proxy.newName = 24;
+    console.log(target);
+    console.log(proxy);
+
+
+    proxy.newStr = 'newStr';
+    console.log(target);
+    console.log(proxy);*/
+
+    // get
+    /*let target = {};
+    let proxy = new Proxy(target, {
+        get(tarpTarget, key, receiver){
+            if(!(key in receiver)){
+                throw new Error(`不存在${key}属性`);
+            }
+            return Reflect.get(tarpTarget, key, receiver);
+        }
+    });
+    console.log(target);
+    console.log(proxy);
+    target.name = 1;
+    console.log(target);
+    console.log(proxy);
+    console.log(proxy.name);
+    console.log(proxy.names);//报错*/
+
+    // has
+    /*let target = {
+        name:'target',
+        value: 42
+    };
+    let proxy = new Proxy(target, {
+        has(tarpTarget, key){
+            if(key == 'name'){
+                return false;
+            }else {
+                return Reflect.has(tarpTarget, key);
+            }
+        }
+    });
+    console.log('name' in proxy);
+    console.log('names' in proxy);
+    console.log('value' in proxy);
+    console.log(proxy);
+    console.log(target);*/
+
+    //deleteProtory
+    // "use strict"
+    /*let target = {
+        name:'target',
+        value: 42
+    };
+    Object.defineProperty(target, 'name', { configurable: false });
+    console.log(target);
+    console.log('value' in target);
+    var result = delete target.value;
+    console.log(result);
+    console.log(target);
+    var result2 = delete target.name;
+    console.log(result2);
+    console.log(target);*/
+
+    /*let target = {
+        name:'target',
+        value: 42
+    };
+    let proxy = new Proxy(target, {
+        deleteProperty(tarpTarget, key){
+            if(key === 'name'){
+
+            }
+        }
+    });*/
 </script>
 </body>
 </html>
