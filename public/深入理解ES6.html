@@ -339,6 +339,22 @@ console.dir(Function);
 * Xmind
 * 划重点
 * */
+
+/*//复习
+let firstName = Symbol('first name');
+console.log(typeof firstName);//symbol
+let obj = {
+    age:25
+};
+console.log(obj);
+obj[firstName] = 'liming';
+console.log(obj);
+console.log(obj[firstName]);
+console.log('--------');
+for(var i in obj){
+    console.log(i);
+}
+console.log(Object.getOwnPropertySymbols(obj));*/
     // 第七章 Set与Map
 /*let arr = ['a', 'b'];
 let set = new Set([arr]);
@@ -395,6 +411,18 @@ console.log(set);
 obj = null;
 console.log(set);*/
 
+/*//复习
+    //存储有序列表
+    let map0 = new Map([['name',1],['age',12],['age',13]]);
+    let map = new Map();
+    map.set('aa',1);
+    console.log(map0);
+    console.log(map0.get('age'));
+    console.log(map);
+
+    map.forEach(function (index,item,map) {
+        console.log(index,item,map);
+    });*/
 /*第七章
  */
 /*var arr = [111, 222, 333];
@@ -402,6 +430,8 @@ console.log(arr);
 for(var i of arr){
     console.log(i);
 }
+
+console.log(Object.getOwnPropertySymbols(arr));
 console.log(arr[Symbol.iterator]);
 console.log(arr[Symbol.iterator]());
 
@@ -417,12 +447,12 @@ console.log(isIterable(arr));
 console.log(isIterable('test'));
 console.log(isIterable({}));
 
-console.log(arr.entries());
+console.log(123,arr.entries());
 for(var i of arr.entries()){
     console.log(i);
 }
-console.log(arr.keys());
-console.log(arr.values());*/
+console.log(1,arr.keys());
+console.log(2,arr.values());*/
 
     /*/!**
      * 创建迭代器
@@ -520,7 +550,27 @@ console.log(iterator.next());*/
     console.log(I.next());
     console.log(I.next(7));
     console.log(I.next(3));*/
+    
+    //复习
+    //迭代器是一个对象，有next方法(返回值value,done)；生成器是一个函数；
+    //创建一个生成器
+    /*function *test() {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+    let test1 = test();
+    console.log(test1.next());
+    console.log(test1.next());
+    console.log(test1.next());
+    console.log(test1.next());
 
+    let obj = [];
+    obj[test] = 3;
+
+    console.log(obj);
+    console.log(obj.entries());
+    console.log(obj.values());*/
     /**
      *第九章：JS中的类
      */
@@ -748,6 +798,8 @@ console.log(iterator.next());*/
     
     let aa = new Set([undefined,3, null]);
     console.log(aa);
+    console.log(aa.keys());
+    console.log(aa.entries());
 
     let arr1 = new Array(1,2);
     let arr2 = new Array(10);
@@ -755,8 +807,10 @@ console.log(iterator.next());*/
     console.log(arr2.length);
     
     
-    let cc = Array.from(1,2,3);
+    let cc = Array.from([...new Set([1,2,3])]);
     console.log(cc);*/
+
+
 </script>
 </body>
 </html>
