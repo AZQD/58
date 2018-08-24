@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript" id="srcTest" src=""></script>
+<script type="text/javascript">
+
+  //一般项目中都会通过webpack，或者后端自动添加版本号。那么如果是自己写的DEMO加版本号，可参看如下方式：
+
+  //5-20的随机数
+  var mathRandomArr = [];
+  var mathRandomResult = 1;
+
+  for (var i = 0; i < 5; i++) {
+    mathRandomArr[i] = Math.floor(Math.random() * 15 + 5);
+    for (var j = 0; j < i; j++) {
+      //遍历i之前的所有项，进行对比
+      if (mathRandomArr[i] == mathRandomArr[j]) {
+        i--;
+      }
+    }
+  }
+  console.log(mathRandomArr);
+
+  for (var i = 0; i < mathRandomArr.length; i++) {
+    mathRandomResult *= mathRandomArr[i];
+  }
+  console.log(mathRandomResult);
+  
+  //常规拼字符串方式：
+  // document.getElementById("srcTest").setAttribute('src', '../public/js/jquery.js?v='+mathRandomResult);
+
+  //在js中可以采取如下方式拼字符串：
+  document.getElementById("srcTest").setAttribute('src', `../public/js/jquery.js?v=${mathRandomResult}`);
+
+</script>
+</body>
+</html>
