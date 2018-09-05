@@ -30,7 +30,15 @@
     console.log('success', result);
   }).catch(function (result) {
     console.log('fail', result);
-  })
+  });
+
+
+/*
+Promise.done() / Promise. finally()
+Promise.done() 的用法类似 .then() ，可以提供resolved和rejected方法，也可以不提供任何参数，它的主要作用是在回调链的尾端捕捉前面没有被 .catch() 捕捉到的错误
+
+Promise. finally() 接受一个方法作为参数，这个方法不管promise最终的状态是怎样，都一定会被执行。
+*/
 
 
 /**

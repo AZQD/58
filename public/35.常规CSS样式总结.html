@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+1. iOS 点击事件背景阴影：
+-webkit-tap-highlight-color: transparent;
+完美去除阴影，只对 iOS 有效
+-->
+
+
+<!--
+2.select
+
+(1).去掉默认箭头（不设置背景色会有灰色背景)
+select{
+   appearance:none;
+   -moz-appearance:none;
+   -webkit-appearance:none;
+   background-color: #fff;
+   /*设置箭头*/
+   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJCAYAAAAGuM1UAAAAH0lEQVR42mNgoDnQ13f7TwiTpIkkm0hyHkl+YhhQAABcfyjsqSyTLgAAAABJRU5ErkJggg==") no-repeat scroll right center transparent;
+   padding-right: 14px;
+}
+(2).右对齐
+select{
+   width:200px;
+   direction: rtl;
+}
+select option {
+　　direction: ltr;
+}
+(3).清除ie的默认选择框样式，隐藏下拉箭头
+select::-ms-expand {
+   display: none;
+}
+-->
+
+<!--
+3.IE、Chorme 、Firefox 隐藏滚动条
+html{
+    /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+    -ms-overflow-style:none;
+    /*火狐下隐藏滚动条*/
+    overflow:-moz-scrollbars-none;
+    }
+/*Chrome下隐藏滚动条，溢出可以透明滚动*/
+html::-webkit-scrollbar{
+    width:0px
+}
+-->
+
+<!--4.右箭头查看更多-->
+<style type="text/css">
+    .rightSelect{
+        display: flex;
+        align-items: center;
+        width: 100px;
+        height: 30px;
+        background: red;
+        position: relative;
+    }
+    .rightSelect::after{
+        content: " ";
+        display: inline-block;
+        height: 6px;
+        width: 6px;
+        border-width: 2px 2px 0 0;
+        border-color: #c8c8cd;
+        border-style: solid;
+        -webkit-transform: matrix(.71,.71,-.71,.71,0,0);
+        transform: matrix(.71,.71,-.71,.71,0,0);
+        position: absolute;
+        top: calc(50% - 6px);
+        right: -12px;
+    }
+</style>
+<span class="rightSelect">test</span>
+</body>
+</html>
