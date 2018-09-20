@@ -81,6 +81,24 @@ html::-webkit-scrollbar{
         top: calc(50% - 6px);
         right: -12px;
     }
+    .getMore{
+        position: relative;
+        display: inline-block;
+    }
+    .getMore::after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        font-size: 0;
+        border-top: 8px solid rgba(0,0,0,0.70);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        bottom: -16px;
+    }
 </style>
 <!--5.placeholder颜色：
 
@@ -99,5 +117,6 @@ html::-webkit-scrollbar{
 -->
 
 <span class="rightSelect">test</span>
+<span class="getMore">getMore</span>
 </body>
 </html>
