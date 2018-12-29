@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+  //js 集合去重，交集，并集，差集: https://blog.csdn.net/u010571844/article/details/50727714
+
+  var a = [1, 2, 3, 4, 5];
+  var b = [3, 4, 5, 6, 7];
+  var result = arrDive(a, b);
+  console.log(result);
+  var result2 = arrDive(b, a);
+  console.log(result2);
+
+  function arrDive(arr1, arr2) { //第一个数组减去第二个数组
+    if (arr2.length === 0) {
+      return arr1;
+    }
+    let diff = [];
+    let str = arr2.join("&quot;&quot;");
+    for (let e in arr1) {
+      if (str.indexOf(arr1[e]) === -1) {
+        diff.push(arr1[e]);
+      }
+    }
+    return diff;
+  }
+</script>
+</body>
+</html>
