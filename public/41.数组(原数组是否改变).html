@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+  //删除数组（改变原来的数据） （splice会改变原来的数组，一定要注意！）
+  //举例：删除数组的第二个；
+  var arr1 = [1, 2, 3];
+  console.log('arr1', arr1);
+  var result1 = arr1.splice(1,1);
+  console.log('result1', result1);
+  console.log('arr1', arr1);
+
+
+  console.log('--------------');
+
+
+  //删除数组（不改变原来的数据）
+  //举例：删除数组的第二个；
+  var arr1 = [1, 2, 3];
+  console.log('arr1', arr1);
+  var result1 = [];
+  for (let i = 0; i < arr1.length; i++) {
+    if (i !== 1) { //第二个的下标
+      result1.push(arr1[i]);
+    }
+  }
+  console.log('result1', result1);
+  console.log('arr1', arr1);
+
+
+</script>
+</body>
+</html>
