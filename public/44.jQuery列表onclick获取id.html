@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+方法1.$('#templetList').append(
+'<div class="weui-cell">\n' +
+  '        <div class="weui-cell__bd">' + item.id + '</div>\n' +
+  '        <div class="weui-cell__bd">' + item.templetName + '</div>\n' +
+  '        <div class="weui-cell__bd">' + item.showName + '</div>\n' +
+  '        <div class="weui-cell__bd">' + item.createTime + '</div>\n' +
+  '        <div class="weui-cell__bd">' + item.priority + '</div>\n' +
+  '        <div class="weui-cell__bd statusText">' + (item.status ? '使用中' : '未使用') + '</div>\n' +
+  '        <div class="weui-cell__bd" onclick="editFun(\' '+ item.id + '\')"><a href="javascript:;">查看</a></div>\n' +
+  '        <div class="weui-cell__bd" onclick="changeStatusFun(' + i + ', ' + item.id + ', ' + item.status + ')"><a href="javascript:;">' + (item.status ? '下线' : '上线') + '</a></div>\n' +
+  '      </div>'
+);
+
+其中editFun函数传递id需要转义；
+
+
+方法2.<div class="weui-cell__bd" id="'+item.id+'" onclick="editFun(this)"><a href="javascript:;">查看</a></div>
+
+editFun(a){
+// console.log($(a).attr('id'));
+}
+
+
+方法3.<div class="weui-cell__bd" data-id="'+item.id+'" onclick="editFun(this)"><a href="javascript:;">查看</a></div>
+
+editFun(a){
+// console.log(a.dataset.id);
+}
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+</body>
+</html>
