@@ -22,16 +22,37 @@
 
   //删除数组（不改变原来的数据）
   //举例：删除数组的第二个；
-  var arr1 = [1, 2, 3];
-  console.log('arr1', arr1);
-  var result1 = [];
-  for (let i = 0; i < arr1.length; i++) {
+  var arr2 = [1, 2, 3];
+  console.log('arr2', arr2);
+  var result2 = [];
+  for (let i = 0; i < arr2.length; i++) {
     if (i !== 1) { //第二个的下标
-      result1.push(arr1[i]);
+      result2.push(arr2[i]);
     }
   }
-  console.log('result1', result1);
-  console.log('arr1', arr1);
+  console.log('result2', result2);
+  console.log('arr2', arr2);
+
+
+  console.log('--------------');
+
+
+  //改变数组（不改变原来的数据）
+  var arr3 = [1, 2, 3];
+  var result3 = Object.assign([], arr3);
+  result3.push(4);
+  console.log('result3', result3);
+  console.log('arr3', arr3);
+
+
+  console.log('--------------');
+
+
+  //改变数组（不改变原来的数据）
+  var arr4 = [1, 2, 3];
+  var result4 = [...arr4, 4];
+  console.log('result4', result4);
+  console.log('arr4', arr4);
 
 
 </script>
