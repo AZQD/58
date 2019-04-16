@@ -13,8 +13,8 @@
   var arr1 = [1, 2, 3];
   console.log('arr1', arr1);
   var result1 = arr1.splice(1,1);
-  console.log('result1', result1);
   console.log('arr1', arr1);
+  console.log('result1', result1);
 
 
   console.log('--------------');
@@ -30,8 +30,8 @@
       result2.push(arr2[i]);
     }
   }
-  console.log('result2', result2);
   console.log('arr2', arr2);
+  console.log('result2', result2);
 
 
   console.log('--------------');
@@ -41,8 +41,8 @@
   var arr3 = [1, 2, 3];
   var result3 = Object.assign([], arr3);
   result3.push(4);
-  console.log('result3', result3);
   console.log('arr3', arr3);
+  console.log('result3', result3);
 
 
   console.log('--------------');
@@ -51,8 +51,37 @@
   //改变数组（不改变原来的数据）
   var arr4 = [1, 2, 3];
   var result4 = [...arr4, 4];
-  console.log('result4', result4);
   console.log('arr4', arr4);
+  console.log('result4', result4);
+
+
+  console.log('--------------');
+
+
+  //保留数组中每个item的一部分
+  let arr5 = [
+    {
+      name:'苹果',
+      count: 100
+    },
+    {
+      name:'香蕉',
+      count: 200
+    },
+    {
+      name:'橘子',
+      count: 300
+    }
+  ];
+  let result51 = arr5.map((item)=>{
+    return item.name
+  });
+  let result52 = arr5.filter((item)=>{
+    return item.count > 150
+  });
+  console.log('arr5', arr5);
+  console.log('result51', result51);// 保留数组中每个item的一部分：["苹果", "香蕉", "橘子"]
+  console.log('result52', result52);// 保留数组中一部分item，即：过滤；
 
 
 </script>
