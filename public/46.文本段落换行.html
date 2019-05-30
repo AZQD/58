@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文本段落换行</title>
+</head>
+<body>
+文本段落换行
+<script type="text/javascript">
+  /**
+   * 详情页文本段落换行：
+   * example：https://etongzhen.58.com/business/detail/993208657147396096?localId=131182101000
+   * 比如：contentDOM为DOM元素，contentData为返回的文本内容；
+   *
+   * 一、在常规HTML中：
+   * 方法1：在标签上套一个 <pre></pre>
+   *
+   * 方法2：设置 css：
+   * <div style="white-space:pre">contentData<div>
+   *
+   * 方法3：用 innerHTML = "..." 来把<br/>识别为html
+   * document.getElementById('contentDOM').innerHTML = contentData.replace(/(\r\n|\n|\r)/gm, '<br/>');
+   *
+   * 二、在React中，标签有dangerouslySetInnerHTML属性，我们可以使用：
+   *
+   * 方法4：<div dangerouslySetInnerHTML={{__html: contentData}}></div>
+   */
+</script>
+</body>
+</html>
