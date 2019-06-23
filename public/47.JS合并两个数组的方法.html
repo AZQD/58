@@ -7,22 +7,22 @@
 <body>
 <script type="text/javascript">
 
-    let arr1 = [1, 2];
-    let arr2 = [3, 4];
+  let arr1 = [1, 2];
+  let arr2 = [3, 4];
 
-    // 第一种：concat，两个原数组不变，同时会返回一个新的数组
-    // let result = arr1.concat(arr2);
-    // console.log(arr1, arr2, result);
+  // 第一种：concat，两个原数组不变，同时会返回一个新的数组
+  // let result = arr1.concat(arr2);
+  // console.log(arr1, arr2, result);
 
-    // 第二种：for循环，会改变原数组
-    // for(let i in arr2){
-    //   arr1.push(arr2[i]);
-    // }
-    // console.log(arr1);
+  // 第二种：for循环，会改变原数组
+  // for(let i in arr2){
+  //   arr1.push(arr2[i]);
+  // }
+  // console.log(arr1);
 
-    // 第三种：apply，调用arr1.push这个函数实例的apply方法，同时把arr2当作参数传入，这样arr1.push这个方法就会遍历arr2数组的所有元素，达到合并的效果。
-    arr1.push.apply(arr1,arr2);
-    console.log(23, arr1);
+  // 第三种：apply，调用arr1.push这个函数实例的apply方法，同时把arr2当作参数传入，这样arr1.push这个方法就会遍历arr2数组的所有元素，达到合并的效果。
+  arr1.push.apply(arr1, arr2);
+  console.log(23, arr1);
 
 </script>
 </body>
