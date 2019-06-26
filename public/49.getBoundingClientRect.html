@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="test">123</div>
+<script type="text/javascript">
+  /**React中才能使用：
+   * Element.getBoundingClientRect()方法返回元素的大小及其相对于视口的位置。
+   * @type {HTMLElement | null}
+   */
+  var test = document.getElementById("test");
+console.log(test);
+console.log(test.getBoundingClientRect());
+
+// 延伸（根据元素距离定不不位置，判断顶部是否展示电话，避免多次执行setState方法）
+  window.addEventListener('scroll', () => {
+    let showTopPhone = this.state.showTopPhone;
+    let top = basePhoneDescNode.getBoundingClientRect().top;
+    if ((showTopPhone && top < 0) || (!showTopPhone && top > 0)) { // 避免多次执行setState
+      return
+    }
+    console.log('更新state，触发重绘');
+    this.setState({
+      showTopPhone: top < 0
+    });
+  });
+</script>
+</body>
+</html>
