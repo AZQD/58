@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  //substring(start， stop) 方法用于提取字符串中介于两个指定下标之间的字符。
+
+  /**
+   * start：必需。一个非负的整数，规定要提取的子串的第一个字符在 stringObject 中的位置。
+   stop：可选。一个非负的整数，比要提取的子串的最后一个字符在 stringObject 中的位置多 1。
+   如果省略该参数，那么返回的子串会一直到字符串的结尾。
+   */
+
+    let str = 'hello world';
+    console.log(str.substring(0, 3)); //hel
+    console.log(str.substring(str.length - 4)); // orld
+</script>
+</body>
+</html>
