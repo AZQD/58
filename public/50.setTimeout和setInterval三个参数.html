@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  setTimeout(function (a) {
+    console.log('setTimeout', a);
+  }, 2000, {a: 1});
+  setInterval(function (a) {
+    console.log('setInterval', a);
+  }, 2000, {b: 2});
+  console.log(3333);
+</script>
+</body>
+</html>
