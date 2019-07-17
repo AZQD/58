@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   *
+   exec：
+   定义和用法
+   exec() 方法用于检索字符串中的正则表达式的匹配。
+
+   语法
+   RegExpObject.exec(string)
+   参数	描述
+   string	必需。要检索的字符串。
+   返回值
+   返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
+   */
+  
+  var str = "我今年25岁明年26岁后年27岁千年24岁";
+
+  var reg=/\d+/g;
+
+  var result;
+  while(result=reg.exec(str)){
+    console.log(result[0])
+  }
+</script>
+</body>
+</html>
