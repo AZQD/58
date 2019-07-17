@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  const obj = {
+    a: 1,
+    b: 2
+  };
+  const arr = [obj];
+  console.log(obj instanceof Object);
+  console.log(arr instanceof Array);
+
+  console.log(Object.prototype.toString.call(obj));
+  console.log(Object.prototype.toString.call(arr));
+</script>
+</body>
+</html>
