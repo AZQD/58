@@ -19,13 +19,13 @@
    返回值
    返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
    */
-  
+
   var str = "我今年25岁明年26岁后年27岁千年24岁";
 
-  var reg=/\d+/g;
+  var reg = /\d+/g;
 
   var result;
-  while(result=reg.exec(str)){
+  while (result = reg.exec(str)) {
     console.log(result[0])
   }
 </script>
