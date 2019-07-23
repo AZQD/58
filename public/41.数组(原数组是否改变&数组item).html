@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
 </head>
 <body>
 
@@ -12,7 +12,7 @@
   //举例：删除数组的第二个；
   var arr1 = [1, 2, 3];
   console.log('arr1', arr1);
-  var result1 = arr1.splice(1,1);
+  var result1 = arr1.splice(1, 1);
   console.log('arr1', arr1);
   console.log('result1', result1);
 
@@ -61,22 +61,22 @@
   //保留数组中每个item的一部分
   let arr5 = [
     {
-      name:'苹果',
+      name: '苹果',
       count: 100
     },
     {
-      name:'香蕉',
+      name: '香蕉',
       count: 200
     },
     {
-      name:'橘子',
+      name: '橘子',
       count: 300
     }
   ];
-  let result51 = arr5.map((item)=>{
+  let result51 = arr5.map((item) => {
     return item.name
   });
-  let result52 = arr5.filter((item)=>{
+  let result52 = arr5.filter((item) => {
     return item.count > 150
   });
   console.log('arr5', arr5);
@@ -89,8 +89,8 @@
 
   //数组reduce的使用(React-Reducer和这个道理类似)
   let arr6 = [1, 2, 3, 4, 5, 6];
-  let result6 = arr6.reduce((x, y)=>{
-    return x+y;
+  let result6 = arr6.reduce((x, y) => {
+    return x + y;
   });
   console.log('arr6', arr6);
   console.log('result6', result6);
