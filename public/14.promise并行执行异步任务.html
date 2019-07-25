@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
 </head>
 <body>
 <script type="text/javascript">
-/**'
- 除了串行执行若干异步任务外，Promise还可以并行执行异步任务。
+  /**'
+   除了串行执行若干异步任务外，Promise还可以并行执行异步任务。
 
- 试想一个页面聊天系统，我们需要从两个不同的URL分别获得用户的个人信息和好友列表，这两个任务是可以并行执行的，用Promise.all()实现如下：
- */
-let promise1 = new Promise(function (resolve, reject) {
-  resolve(1)
-});
-let promise2 = new Promise(function (resolve, reject) {
-  resolve(2)
-});
+   试想一个页面聊天系统，我们需要从两个不同的URL分别获得用户的个人信息和好友列表，这两个任务是可以并行执行的，用Promise.all()实现如下：
+   */
+  let promise1 = new Promise(function (resolve, reject) {
+    resolve(1)
+  });
+  let promise2 = new Promise(function (resolve, reject) {
+    resolve(2)
+  });
 
-Promise.all([promise1, promise2]).then(function (result) {
-  console.log(result);
-});
+  Promise.all([promise1, promise2]).then(function (result) {
+    console.log(result);
+  });
 
 </script>
 </body>
