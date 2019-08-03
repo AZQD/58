@@ -16,21 +16,21 @@
 
 png图片：
 <br/>
-<img src="images/weChat.png" alt="weChat.png" />
+<img src="images/weChat.png" alt="weChat.png"/>
 <hr/>
 webp图片：
 <br/>
-<img src="images/weChat.webp" alt="weChat.webp" />
+<img src="images/weChat.webp" alt="weChat.webp"/>
 <script type="text/javascript">
-    function checkWebp() {
-        try{
-            return (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0);
-        }catch(err) {
-            return  false;
-        }
+  function checkWebp() {
+    try {
+      return (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0);
+    } catch (err) {
+      return false;
     }
+  }
 
-    console.log(checkWebp());   // true or false
+  console.log(checkWebp());   // true or false
 </script>
 </body>
 </html>
