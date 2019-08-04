@@ -12,10 +12,10 @@
    * @type {HTMLElement | null}
    */
   var test = document.getElementById("test");
-console.log(test);
-console.log(test.getBoundingClientRect());
+  console.log(test);
+  console.log(test.getBoundingClientRect());
 
-// 延伸（根据元素距离定不不位置，判断顶部是否展示电话，避免多次执行setState方法）
+  // 延伸（根据元素距离定不不位置，判断顶部是否展示电话，避免多次执行setState方法）
   window.addEventListener('scroll', () => {
     let showTopPhone = this.state.showTopPhone;
     let top = basePhoneDescNode.getBoundingClientRect().top;
