@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
 </head>
 <body>
 
@@ -59,66 +59,68 @@ html::-webkit-scrollbar{
 
 <!--4.右箭头查看更多-->
 <style type="text/css">
-    .rightSelect{
-        display: flex;
-        align-items: center;
-        width: 100px;
-        height: 30px;
-        background: red;
-        position: relative;
-    }
-    .rightSelect::after{
-        content: " ";
-        display: inline-block;
-        height: 6px;
-        width: 6px;
-        border-width: 2px 2px 0 0;
-        border-color: #c8c8cd;
-        border-style: solid;
-        -webkit-transform: matrix(.71,.71,-.71,.71,0,0);
-        transform: matrix(.71,.71,-.71,.71,0,0);
-        position: absolute;
-        top: calc(50% - 6px);
-        right: -12px;
-    }
-    .getMore{
-        position: relative;
-        display: inline-block;
-    }
-    .getMore::after{
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        font-size: 0;
-        border-top: 8px solid rgba(0,0,0,0.70);
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        bottom: -16px;
-    }
+  .rightSelect {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    background: red;
+    position: relative;
+  }
 
+  .rightSelect::after {
+    content: " ";
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    border-width: 2px 2px 0 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    -webkit-transform: matrix(.71, .71, -.71, .71, 0, 0);
+    transform: matrix(.71, .71, -.71, .71, 0, 0);
+    position: absolute;
+    top: calc(50% - 6px);
+    right: -12px;
+  }
 
-    /*after伪类放置图片*/
-    /*.toggleBox .toggleItem .toggle_name{
-        font-size: 24rpx;
-        position: relative;
-        color: #000;
-    }
-    .toggleBox .toggleItem .toggle_name::after{
-        width:18rpx;
-        height:18rpx;
-        margin-left: 4rpx;
-        display: inline-block;
-        content: '';
-        background: url(https://file.gongjianwang.net/wechat/gongjian/images/common/more_black_down.png) no-repeat right center;
-        background-size: 100% 100%;
-        position: absolute;
-        top: 8rpx;
-        z-index: 2;
-    }*/
+  .getMore {
+    position: relative;
+    display: inline-block;
+  }
+
+  .getMore::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border-top: 8px solid rgba(0, 0, 0, 0.70);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    bottom: -16px;
+  }
+
+  /*after伪类放置图片*/
+  /*.toggleBox .toggleItem .toggle_name{
+      font-size: 24rpx;
+      position: relative;
+      color: #000;
+  }
+  .toggleBox .toggleItem .toggle_name::after{
+      width:18rpx;
+      height:18rpx;
+      margin-left: 4rpx;
+      display: inline-block;
+      content: '';
+      background: url(https://file.gongjianwang.net/wechat/gongjian/images/common/more_black_down.png) no-repeat right center;
+      background-size: 100% 100%;
+      position: absolute;
+      top: 8rpx;
+      z-index: 2;
+  }*/
 </style>
 <!--5.placeholder颜色：
 
