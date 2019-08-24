@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html;">
-    <meta name="viewport"
-          content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="format-detection" content="email=no"/>
-    <meta name="format-detection" content="address=no;">
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <title>遮罩全屏居中显示</title>
-    <style type="text/css">
-        .tips-bg{
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            background: rgba(0,0,0,.6);
-        }
-        .tips-content{
-            position: fixed;
-            z-index: 5000;
-            width: 80%;
-            max-width: 300px;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
-            background-color: #fff;
-            text-align: center;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html;">
+  <meta name="viewport"
+        content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <meta name="format-detection" content="address=no;">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <title>遮罩全屏居中显示</title>
+  <style type="text/css">
+    .tips-bg {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, .6);
+    }
+
+    .tips-content {
+      position: fixed;
+      z-index: 5000;
+      width: 80%;
+      max-width: 300px;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      text-align: center;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
 <div class="tips-box">
-    <div class="tips-bg"></div>
-    <div class="tips-content">
-        content
-    </div>
+  <div class="tips-bg"></div>
+  <div class="tips-content">
+    content
+  </div>
 </div>
 <div class="box">box</div>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
-    // $('body,html').css('overflow', 'hidden');
-    // $('body,html').css('overflow', 'auto');
+  // $('body,html').css('overflow', 'hidden');
+  // $('body,html').css('overflow', 'auto');
 
 </script>
 </body>
