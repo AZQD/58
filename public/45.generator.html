@@ -6,31 +6,31 @@
 </head>
 <body>
 <script type="text/javascript">
-    function* gen() {
-      yield 'welcome';
-      yield 'to';
-      yield 'BeiJing';
-      return 'hello';
-    }
+  function* gen() {
+    yield 'welcome';
+    yield 'to';
+    yield 'BeiJing';
+    return 'hello';
+  }
 
-    let g1 = gen();
+  let g1 = gen();
 
-    /*以下四种方式执行g1*/
+  /*以下四种方式执行g1*/
 
-    /*console.log(g1.next());
-    console.log(g1.next());
-    console.log(g1.next());
-    console.log(g1.next());*/
-    
-    /*for (let key of g1){
-      console.log(key);
-    }*/
-    
-    /*let [a, ...b] = g1;
-    console.log(a, b);*/
-    
-    /*let result = Array.from(g1);
-    console.log(result);*/
+  /*console.log(g1.next());
+  console.log(g1.next());
+  console.log(g1.next());
+  console.log(g1.next());*/
+
+  /*for (let key of g1){
+    console.log(key);
+  }*/
+
+  /*let [a, ...b] = g1;
+  console.log(a, b);*/
+
+  /*let result = Array.from(g1);
+  console.log(result);*/
 </script>
 </body>
 </html>
