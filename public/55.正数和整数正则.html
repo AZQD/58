@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   * 联系方式正则表达式
+   * @param phone
+   * @returns {boolean}
+   */
+  function regExpPhone(phone) {
+    let phoneReg = /^[1][3|4|5|7|8][0-9]{9}$/;
+    return phoneReg.test(phone);
+  }
+
+  /**
+   * 正整数正则表达式
+   * @param number
+   * @returns {boolean}
+   */
+  function regExpPositiveInteger(number) {
+    let intNumberReg = /^[1-9]\d*$/;
+    return intNumberReg.test(number);
+  }
+
+  /**
+   * 正数正则表达式（包含小数点）
+   * @param number
+   * @returns {boolean}
+   */
+  function regExpPositiveNumber(number) {
+    // let intNumberReg = /^(([1-9][0-9]*(\.\d{1,2})?)|(0\.\d{1,2}))$/; // 小数点后最多两位
+    let intNumberReg = /^(([1-9][0-9]*(\.\d)?)|(0\.\d))$/; // 小数点后位数未限制
+    return intNumberReg.test(number);
+  }
+</script>
+</body>
+</html>
