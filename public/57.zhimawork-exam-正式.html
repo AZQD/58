@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> 题目 </title>
+</head>
+<body>
+<table border="1">
+  <tr>
+    <th>编号</th>
+    <th>姓名</th>
+    <th>职务</th>
+    <th>办公室</th>
+  </tr>
+  <tr>
+    <td>001</td>
+    <td>张三</td>
+    <td>院长</td>
+    <td>A101</td>
+  </tr>
+  <tr>
+    <td>002</td>
+    <td>李四</td>
+    <td colspan="2">没有记录</td>
+  </tr>
+  <tr>
+    <td>003</td>
+    <td>王五</td>
+    <td>副院长</td>
+    <td rowspan="2">A103</td>
+  </tr>
+  <tr>
+    <td>004</td>
+    <td>陆六</td>
+    <td>职员</td>
+  </tr>
+</table>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> 网页标题 </title>
+  <script src="http://exam.zhimawork.com/user/js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<h3>请填写以下表单：</h3>
+<form action="#do.php" method="get">
+  <p>账号：<input name="account" type="text"/></p>
+  <p>密码：<input name="password" type="password"/><span id="pwdinfo"></span></p>
+  <p><input type="submit" value="提交" id="btn_submit"/></p>
+</form>
+<script>
+  $(function(){
+
+    $('#btn_submit').click(function(){
+      //判断账号不能为空，使用弹框警告
+      if(!$("input[name='account']").val()){
+        alert('账号不能为空');
+        return;
+      }
+
+
+      //判断密码不能为空，在密码输入后面显示提示
+      if(!$("input[name='password']").val()){
+        $('#pwdinfo').html('密码不能为空').css('color', 'red');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> 网页标题 </title>
+  <script src="http://exam.zhimawork.com/user/js/jquery-1.11.1.min.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      width:490px;
+      height:490px;
+      background-color:#eee;
+    }
+    .wrap ul{
+      list-style: none;
+      overflow: hidden;
+      padding-top: 5px;
+      padding-left: 5px;
+    }
+    .wrap ul li{
+      float: left;
+      width: 150px;
+      height: 150px;
+      margin: 5px;
+      background-color: red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: #fff;
+    }
+    .wrap ul li:hover{
+      font-size: 60px;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+  </ul>
+</div>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> 网页标题 </title>
+  <style>
+    #wrap {
+      width:400px;
+    }
+    #wrap .c1 {
+      font-size: 30px;
+    }
+    #wrap .c2 {
+      color: blue;
+    }
+    #wrap .c3 {
+      font-weight: bold;
+    }
+    #wrap .c4 {
+      text-decoration: underline;
+    }
+    #wrap .c5 {
+      background-color: green;
+      color: #fff;
+    }
+    #wrap .c6 {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+<div id="wrap">
+  <p class="c1">第1行</p>
+  <p class="c2">第2行</p>
+  <p class="c3">第3行</p>
+  <p class="c4">第4行</p>
+  <p class="c5">第5行</p>
+  <p class="c6">第6行</p>
+</div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> 网页标题 </title>
+</head>
+<body>
+<h3>请填写以下表单：</h3>
+<form action="#do.php" method="get">
+  <p>姓名：<input name="username" type="text"/></p>
+  <p>性别：
+    <label><input name="sex" type="radio" value="0" />男</label>
+    <label><input name="sex" type="radio" value="1" />女</label>
+  </p>
+  <p>账号：<input name="account" type="text"/></p>
+  <p>密码：<input name="password" type="password"/></p>
+  <p>简介：<textarea name="" id="textarea" cols="50" rows="5"></textarea></p>
+  <p><input type="submit" value="提交数据" id="btn_submit"/></p>
+</form>
+</body>
+</html>
