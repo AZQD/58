@@ -39,7 +39,6 @@
 </html>
 
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,18 +55,18 @@
   <p><input type="submit" value="提交" id="btn_submit"/></p>
 </form>
 <script>
-  $(function(){
+  $(function () {
 
-    $('#btn_submit').click(function(){
+    $('#btn_submit').click(function () {
       //判断账号不能为空，使用弹框警告
-      if(!$("input[name='account']").val()){
+      if (!$("input[name='account']").val()) {
         alert('账号不能为空');
         return;
       }
 
 
       //判断密码不能为空，在密码输入后面显示提示
-      if(!$("input[name='password']").val()){
+      if (!$("input[name='password']").val()) {
         $('#pwdinfo').html('密码不能为空').css('color', 'red');
       }
     });
@@ -77,7 +76,6 @@
 </html>
 
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,22 +83,25 @@
   <title> 网页标题 </title>
   <script src="http://exam.zhimawork.com/user/js/jquery-1.11.1.min.js"></script>
   <style>
-    *{
+    * {
       margin: 0;
       padding: 0;
     }
+
     .wrap {
-      width:490px;
-      height:490px;
-      background-color:#eee;
+      width: 490px;
+      height: 490px;
+      background-color: #eee;
     }
-    .wrap ul{
+
+    .wrap ul {
       list-style: none;
       overflow: hidden;
       padding-top: 5px;
       padding-left: 5px;
     }
-    .wrap ul li{
+
+    .wrap ul li {
       float: left;
       width: 150px;
       height: 150px;
@@ -112,7 +113,8 @@
       font-size: 40px;
       color: #fff;
     }
-    .wrap ul li:hover{
+
+    .wrap ul li:hover {
       font-size: 60px;
       background-color: blue;
     }
@@ -137,8 +139,6 @@
 </html>
 
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -146,24 +146,30 @@
   <title> 网页标题 </title>
   <style>
     #wrap {
-      width:400px;
+      width: 400px;
     }
+
     #wrap .c1 {
       font-size: 30px;
     }
+
     #wrap .c2 {
       color: blue;
     }
+
     #wrap .c3 {
       font-weight: bold;
     }
+
     #wrap .c4 {
       text-decoration: underline;
     }
+
     #wrap .c5 {
       background-color: green;
       color: #fff;
     }
+
     #wrap .c6 {
       border: 1px solid red;
     }
@@ -193,8 +199,8 @@
 <form action="#do.php" method="get">
   <p>姓名：<input name="username" type="text"/></p>
   <p>性别：
-    <label><input name="sex" type="radio" value="0" />男</label>
-    <label><input name="sex" type="radio" value="1" />女</label>
+    <label><input name="sex" type="radio" value="0"/>男</label>
+    <label><input name="sex" type="radio" value="1"/>女</label>
   </p>
   <p>账号：<input name="account" type="text"/></p>
   <p>密码：<input name="password" type="password"/></p>
