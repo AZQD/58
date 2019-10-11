@@ -1,15 +1,15 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="author" content="微普科技 http://www.wiipu.com" />
+  <meta name="author" content="微普科技 http://www.wiipu.com"/>
   <title>js动态创建元素并设置样式</title>
   <style type="text/css">
     * {
       margin: 0;
       padding: 0;
     }
+
     #zmkt {
       width: 600px;
       height: 250px;
@@ -19,12 +19,12 @@
     }
   </style>
   <script>
-    window.onload = function (){
+    window.onload = function () {
       var oZmkt = document.getElementById("zmkt");
       var ipt = document.createElement('input');
-      ipt.style.width="400px";
-      ipt.style.height="50px";
-      ipt.style.marginTop="200px";
+      ipt.style.width = "400px";
+      ipt.style.height = "50px";
+      ipt.style.marginTop = "200px";
       ipt.setAttribute('type', 'text');
       ipt.setAttribute('value', '请输入你的手机号');
       oZmkt.appendChild(ipt);
