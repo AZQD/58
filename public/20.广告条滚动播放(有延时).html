@@ -6,27 +6,31 @@
   <link rel="shortcut icon" href="img/1.png" type="image/x-icon"/>
   <link rel="stylesheet" href="../css/cssreset.css">
   <style>
-    .wrapper{
+    .wrapper {
       min-width: 320px;
       max-width: 640px;
       margin: 0 auto;
     }
-    #box{
+
+    #box {
       /*padding: 10px 94px 10px 15px ;*/
       /*background-size: 79px 30px ;*/
       background-color: greenyellow;
       overflow: hidden;
       height: 30px;
-      margin-top:66px;
+      margin-top: 66px;
     }
-    ul li{
+
+    ul li {
       height: 30px;
       line-height: 30px;
     }
-    ul a{
+
+    ul a {
       display: block;
     }
-    #box img{
+
+    #box img {
       width: 25px;
       height: 25px;
       display: inline-block;
@@ -49,21 +53,24 @@
 <script>
   /*文字滚动效果*/
   var box = document.getElementById('box');
-  box.innerHTML+=box.innerHTML;//克隆一份一样的内容
-  startScroll(box,30,100,1000);
-  function startScroll(obj,height,speed,delay){
-    obj.timer=setInterval(function (){
-      if(obj.scrollTop % height==0){
+  box.innerHTML += box.innerHTML;//克隆一份一样的内容
+  startScroll(box, 30, 100, 1000);
+
+  function startScroll (obj, height, speed, delay) {
+    obj.timer = setInterval(function () {
+      if (obj.scrollTop % height == 0) {
         clearInterval(obj.timer);
-        setTimeout(function (){startScroll(obj,height,speed,delay)},delay);
-      }else{
+        setTimeout(function () {
+          startScroll(obj, height, speed, delay)
+        }, delay);
+      } else {
         obj.scrollTop++;
         console.log(obj.scrollTop);
-        if(obj.scrollTop >= obj.scrollHeight/2){
-          obj.scrollTop =0;
+        if (obj.scrollTop >= obj.scrollHeight / 2) {
+          obj.scrollTop = 0;
         }
       }
-    },speed);
+    }, speed);
     obj.scrollTop++;
   }
 </script>
