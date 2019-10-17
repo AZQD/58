@@ -15,22 +15,22 @@
 <body>
 
 <script type="text/javascript">
-    console.log('WebSocket' in window);
-    var ws = new WebSocket('ws://127.0.0.1:3001');
-    console.log(ws);
-    ws.onopen = function(evt) {
-        console.log("Connection open ...");
-        ws.send("Hello WebSockets!");
-    };
+  console.log('WebSocket' in window);
+  var ws = new WebSocket('ws://127.0.0.1:3001');
+  console.log(ws);
+  ws.onopen = function (evt) {
+    console.log("Connection open ...");
+    ws.send("Hello WebSockets!");
+  };
 
-    ws.onmessage = function(evt) {
-        console.log( "Received Message: " + evt.data);
-        ws.close();
-    };
+  ws.onmessage = function (evt) {
+    console.log("Received Message: " + evt.data);
+    ws.close();
+  };
 
-    ws.onclose = function(evt) {
-        console.log("Connection closed.");
-    };
+  ws.onclose = function (evt) {
+    console.log("Connection closed.");
+  };
 </script>
 </body>
 </html>
