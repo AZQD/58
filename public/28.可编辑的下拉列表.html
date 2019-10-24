@@ -45,18 +45,18 @@
 </style>
 <body>
 <span class="cls_select_span">
-        <select id="id_select" class="cls_select" onChange="selectOnChangeFunc()">
-            <option value="" class="cls_option_defined">---自定义---</option>
-            <option value="开发部">开发部</option>
-            <option value="市场部">市场部</option>
-            <option value="销售部">销售部</option>
-        </select>
-    </span>
+  <select id="id_select" class="cls_select" onChange="selectOnChangeFunc()">
+    <option value="" class="cls_option_defined">---自定义---</option>
+    <option value="开发部">开发部</option>
+    <option value="市场部">市场部</option>
+    <option value="销售部">销售部</option>
+  </select>
+</span>
 <span class="cls_input_span">
-        <input type="text" id="id_input" class="cls_input" value="可选择也可自定义输入">
-    </span>
+  <input type="text" id="id_input" class="cls_input" value="可选择也可自定义输入">
+</span>
 <script>
-  function selectOnChangeFunc() {
+  function selectOnChangeFunc () {
     document.getElementById('id_input').value = document.getElementById('id_select').options[document.getElementById('id_select').selectedIndex].value;
   }
 </script>
