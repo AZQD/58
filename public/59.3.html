@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Expires" content="-1">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <!--<link href="img/logo.png" rel="shortcut icon" type="image/x-icon"/>-->
+  <title>HTML5</title>
+  <!--<link href="css/reset.css" rel="stylesheet">-->
+  <!--<link href="css/index.css" rel="stylesheet">-->
+  <style type="text/css">
+    /** 添加样式 **/
+    canvas{
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+<canvas id="mycanvas">
+  您的浏览器不支持Canvas
+</canvas>
+
+</body>
+<script type="text/javascript">
+  //添加脚本
+  var mycanvas = document.querySelector('#mycanvas');
+  //不带单位
+  mycanvas.width = 360;
+  mycanvas.height = 360;
+  if(mycanvas.getContext){
+    var painting = mycanvas.getContext('2d');
+    painting.strokeStyle = 'blue';
+    painting.beginPath();
+
+
+
+
+
+
+    var progress = 0;
+    //回调函数
+    function render() {
+
+      painting.clearRect(0, 0, mycanvas.width,mycanvas.height);
+
+      let left = 0; // 左边距
+      let top = 0; // 上边距
+      let lineWidth = 200; // 线的宽度
+      let lineHeight = 100; // 线的高度
+
+      painting.moveTo(left,top);
+      painting.lineTo(lineWidth + left,top);
+      painting.lineTo(left,lineHeight+ top);
+      painting.lineTo(lineWidth + left,lineHeight+ top);
+
+      painting.stroke();
+      painting.closePath();
+
+      painting.beginPath();
+
+      let arcLeft;
+      let arcTop;
+
+
+      // arcLeft = Math.abs(lineWidth*Math.sin(progress*Math.PI / 180)); // 正弦函数
+
+      if(progress%lineWidth < lineWidth/2){
+        arcLeft = progress%lineWidth*2;
+      }else{
+        arcLeft = (lineWidth - progress%lineWidth)*2;
+      }
+
+      arcTop = progress*lineHeight*0.005;
+
+
+
+
+
+
+      // console.log(arcLeft);
+      console.log(arcTop);
+
+      painting.arc(arcLeft, arcTop, 10, 0, 2 * Math.PI);
+
+        painting.fill();
+
+      progress += 1; //修改图像的位置
+      if (progress < 3000) {
+        //在动画没有结束前，递归渲染
+        window.requestAnimationFrame(render);
+      }
+    }
+    //第一帧渲染
+    window.requestAnimationFrame(render);
+
+
+  }else {
+    alert('您的浏览器不支持Canvas');
+  }
+
+
+</script>
+</html>

@@ -1,0 +1,158 @@
+!DOCTYPE html>
+<!-- saved from url=(0051)http://wow.techbrood.com/static/20161230/31938.html -->
+<html class=" -webkit- js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="shortcut icon" href="http://s.techbrood.com/themes/techbrood/image/favicon.ico" type="image/x-icon">
+  <title>HTML5/CANVAS沿固定曲线轨迹运动的演示动画 - 踏得网</title>
+  <meta name="description" content="全球视野的HTML5动画动效搜索引擎和分享平台-踏得网">
+  <meta name="keywords" content="动效,动画,HTML5,CSS3,WEB开发,前端开发,搜索引擎,3D,WebGL,SVG,Material Design,技术,设计,创意,特效">
+  <style>body {
+    background-color: #222;
+    color: white;
+    margin: 0;
+  }
+  canvas {
+    background-color: #000;
+  }
+  #wrapper {
+    width: 334px;
+    margin: 0 auto;
+  }
+  #wrapper div {
+    width: 300px;
+    margin: .5em;
+    padding: .5em;
+    border: 1px solid #333;
+    display: inline-block;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @media only screen and (min-width: 668px) {
+    #wrapper {
+      width: 668px;
+    }
+  }
+  @media only screen and (min-width: 1002px) {
+    #wrapper {
+      width: 1002px;
+    }
+  }</style>
+  <script src="./hm.js"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?8c68efa3648cdc01a3d8333e0becf3c7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head><body>
+<script src="./js/jquery.js"></script>
+<div id="wrapper">
+  <!--
+  <div><canvas width="300" height="280"></canvas><p>A = 5; B = 3; C = 6</p></div>
+  <div><canvas width="300" height="280"></canvas><p>A = 7; B = 3; C = 9</p></div>
+  <div><canvas width="300" height="280"></canvas><p>A = 8; B = 3; C = 9</p></div>
+  <div><canvas width="300" height="280"></canvas><p>A = 8; B = 5; C = 12</p></div>
+  <div><canvas width="300" height="280"></canvas><p>A = 16; B = 5; C = 10</p></div>
+  <div><canvas width="300" height="280"></canvas><p>A = 16; B = 5; C = 20</p></div>
+  -->
+</div>
+<script
+>var wrapper = document.getElementById("wrapper");
+
+var rad = Math.PI / 180;
+var frames = 0;
+var Ry = []; // canvases array
+
+function createCanvas(A, B, C, I) {
+  this.A = A; // for the hypocycloid
+  this.B = B; // for the hypocycloid
+  this.C = C; // num particles
+  this.I = I; // increment
+  this.a = this.A * I;
+  this.b = this.B * I;
+  this.r = 6; // particle radius
+
+  // createElement
+  this.parent = document.createElement("div");
+  this.c = document.createElement("canvas");
+  this.parent.appendChild(this.c);
+  var html = "A = " + A + "; B = " + B + "; C = " + C;
+  var p = document.createElement("p");
+  p.innerHTML = html;
+  this.parent.appendChild(p);
+  wrapper.appendChild(this.parent);
+
+  // getContext
+  this.ctx = this.c.getContext("2d");
+  this.cw = this.c.width = 300,
+    this.cx = this.cw / 2;
+  this.ch = this.c.height = 280,
+    this.cy = this.ch / 2;
+  this.ctx.strokeStyle = "rgba(255,255,255,.25)";
+  this.ctx.fillStyle = "#fff";
+
+  this.drawHypocycloid = function() {
+    this.ctx.beginPath();
+    for (var T = 0; T < 360 * this.B; T++) {
+      var o = this.hypocycloidPoint(T);
+      this.ctx.lineTo(o.x, o.y);
+    }
+    this.ctx.closePath();
+    this.ctx.stroke();
+  }
+
+  this.hypocycloidPoint = function(T) {
+    var t = T * rad;
+    var o = {}
+    /*
+            o.x = this.cx + (this.a - this.b) * Math.cos(t) + this.b * Math.cos((this.a - this.b) / this.b * t);
+            o.y = this.cy + (this.a - this.b) * Math.sin(t) - this.b * Math.sin((this.a - this.b) / this.b * t);
+    */
+    o.x = this.cx + (this.a - this.b) * Math.cos(t) + this.b * Math.cos((this.a - this.b) / this.b * t);
+    o.y = this.cy + (this.a - this.b) * Math.sin(t) - this.b * Math.sin((this.a - this.b) / this.b * t);
+    return o;
+  }
+
+  this.drawPoint = function(p) {
+    this.ctx.beginPath();
+    this.ctx.arc(p.x, p.y, this.r, 0, 2 * Math.PI);
+    this.ctx.fill();
+  }
+
+  this.draw = function() {
+    this.ctx.clearRect(0, 0, this.cw, this.ch);
+    this.drawHypocycloid();
+    var phi = 360 * this.B / this.C;
+
+    for (var i = 0; i < this.C; i++) {
+      this.ctx.fillStyle = "hsl(" + (i * 360 / C) + ",90%, 65%)";
+      var p = this.hypocycloidPoint(i * phi + frames);
+      this.drawPoint(p)
+    }
+  }
+
+}
+
+
+Ry.push(new createCanvas(3, 1, 1, 25));
+Ry.push(new createCanvas(7, 3, 9, 15));
+Ry.push(new createCanvas(8, 3, 9, 15));
+Ry.push(new createCanvas(8, 5, 12, 15));
+Ry.push(new createCanvas(16, 5, 10, 8));
+Ry.push(new createCanvas(16, 5, 20, 8));
+
+
+function Draw() {
+  requestId = window.requestAnimationFrame(Draw);
+  frames++;
+
+  for (var c = 0; c < Ry.length; c++) {
+    Ry[c].draw();
+  }
+
+}
+Draw();</script></body></html>
