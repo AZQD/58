@@ -1,6 +1,9 @@
 !DOCTYPE html>
 <!-- saved from url=(0051)http://wow.techbrood.com/static/20161230/31938.html -->
-<html class=" -webkit- js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html
+  class=" -webkit- js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <link rel="shortcut icon" href="http://s.techbrood.com/themes/techbrood/image/favicon.ico" type="image/x-icon">
@@ -12,13 +15,16 @@
     color: white;
     margin: 0;
   }
+
   canvas {
     background-color: #000;
   }
+
   #wrapper {
     width: 334px;
     margin: 0 auto;
   }
+
   #wrapper div {
     width: 300px;
     margin: .5em;
@@ -29,26 +35,30 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   @media only screen and (min-width: 668px) {
     #wrapper {
       width: 668px;
     }
   }
+
   @media only screen and (min-width: 1002px) {
     #wrapper {
       width: 1002px;
     }
   }</style>
-  <script src="./hm.js"></script><script>
+  <script src="./hm.js"></script>
+  <script>
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
       var hm = document.createElement("script");
       hm.src = "//hm.baidu.com/hm.js?8c68efa3648cdc01a3d8333e0becf3c7";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
-</head><body>
+</head>
+<body>
 <script src="./js/jquery.js"></script>
 <div id="wrapper">
   <!--
@@ -67,7 +77,7 @@ var rad = Math.PI / 180;
 var frames = 0;
 var Ry = []; // canvases array
 
-function createCanvas(A, B, C, I) {
+function createCanvas (A, B, C, I) {
   this.A = A; // for the hypocycloid
   this.B = B; // for the hypocycloid
   this.C = C; // num particles
@@ -95,7 +105,7 @@ function createCanvas(A, B, C, I) {
   this.ctx.strokeStyle = "rgba(255,255,255,.25)";
   this.ctx.fillStyle = "#fff";
 
-  this.drawHypocycloid = function() {
+  this.drawHypocycloid = function () {
     this.ctx.beginPath();
     for (var T = 0; T < 360 * this.B; T++) {
       var o = this.hypocycloidPoint(T);
@@ -105,7 +115,7 @@ function createCanvas(A, B, C, I) {
     this.ctx.stroke();
   }
 
-  this.hypocycloidPoint = function(T) {
+  this.hypocycloidPoint = function (T) {
     var t = T * rad;
     var o = {}
     /*
@@ -117,13 +127,13 @@ function createCanvas(A, B, C, I) {
     return o;
   }
 
-  this.drawPoint = function(p) {
+  this.drawPoint = function (p) {
     this.ctx.beginPath();
     this.ctx.arc(p.x, p.y, this.r, 0, 2 * Math.PI);
     this.ctx.fill();
   }
 
-  this.draw = function() {
+  this.draw = function () {
     this.ctx.clearRect(0, 0, this.cw, this.ch);
     this.drawHypocycloid();
     var phi = 360 * this.B / this.C;
@@ -146,7 +156,7 @@ Ry.push(new createCanvas(16, 5, 10, 8));
 Ry.push(new createCanvas(16, 5, 20, 8));
 
 
-function Draw() {
+function Draw () {
   requestId = window.requestAnimationFrame(Draw);
   frames++;
 
@@ -155,4 +165,7 @@ function Draw() {
   }
 
 }
-Draw();</script></body></html>
+
+Draw();</script>
+</body>
+</html>
