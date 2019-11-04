@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <title>Document</title>
   <style type="text/css">
     .main {
@@ -33,19 +33,19 @@
 <script type="text/javascript">
   var $main = $('.main');
 
-  $main.on('click', function() {
+  $main.on('click', function () {
     $(this).addClass('change-size')
   });
-  $main.on('animationstart', function(e) {
+  $main.on('animationstart', function (e) {
     console.log('animationstart:' + e.elapsedTime)
   });
-  $main.on('animationiteration', function(e) {
+  $main.on('animationiteration', function (e) {
     console.log('animationiteration:' + e.elapsedTime)
   });
-  $main.on('animationend', function(e) {
+  $main.on('animationend', function (e) {
     console.log('animationend:' + e.elapsedTime)
   });
-  $main.on('transitionend', function(e) {
+  $main.on('transitionend', function (e) {
     console.log('transitionend:' + e.elapsedTime)
   });
 </script>
