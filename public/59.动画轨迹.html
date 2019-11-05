@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <style type="text/css">
-    *{
+    * {
       margin: 0;
       padding: 0;
     }
+
     .box {
       border-top: solid 1px red;
       width: 100px;
@@ -37,20 +38,23 @@
       border-left: 99px solid transparent;
       content: "";
     }
-    .box:last-child{
+
+    .box:last-child {
       border-bottom: solid 1px red;
     }
 
-    .imgIcon{
+    .imgIcon {
       width: 24px;
       height: 24px;
       position: absolute;
     }
-    .imgIcon1{
+
+    .imgIcon1 {
       left: 0;
       top: 0;
     }
-    .imgIcon2{
+
+    .imgIcon2 {
       left: 100px;
       top: 0;
     }
@@ -71,12 +75,16 @@
 
 <div>
   <div class="box">
-    <img class="imgIcon imgIcon1" src="https://pic1.58cdn.com.cn/images/xq_img/n_v2da6e5eeb9a324123ab92d99f659d1427.png" alt="">
-    <img class="imgIcon imgIcon2" src="https://pic1.58cdn.com.cn/images/xq_img/n_v2da6e5eeb9a324123ab92d99f659d1427.png" alt="">
+    <img class="imgIcon imgIcon1" src="https://pic1.58cdn.com.cn/images/xq_img/n_v2da6e5eeb9a324123ab92d99f659d1427.png"
+         alt="">
+    <img class="imgIcon imgIcon2" src="https://pic1.58cdn.com.cn/images/xq_img/n_v2da6e5eeb9a324123ab92d99f659d1427.png"
+         alt="">
   </div>
   <div class="box">
-    <img class="imgIcon imgIcon1" src="https://pic1.58cdn.com.cn/images/xq_img/n_v2da6e5eeb9a324123ab92d99f659d1427.png" alt="">
-    <img class="imgIcon imgIcon2" src="https://pic1.58cdn.com.cn/images/xq_img/n_v2da6e5eeb9a324123ab92d99f659d1427.png" alt="">
+    <img class="imgIcon imgIcon1" src="https://pic1.58cdn.com.cn/images/xq_img/n_v2da6e5eeb9a324123ab92d99f659d1427.png"
+         alt="">
+    <img class="imgIcon imgIcon2" src="https://pic1.58cdn.com.cn/images/xq_img/n_v2da6e5eeb9a324123ab92d99f659d1427.png"
+         alt="">
   </div>
   <div class="box"></div>
 </div>
@@ -85,39 +93,39 @@
 
 <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
 <script type="text/javascript">
-    $(function(){
-      var $imgIconArr = $('.imgIcon');
-      console.log($imgIconArr);
-      console.log($imgIconArr.length);
-      var $target = $('#target');
-      $target
-        .animate({
-        left:$target.position().left + 100,
-        top:$target.position().top
-      }, function(){
-          $imgIconArr.eq(0).hide();
-        }).animate({
-        left:0,
-        top:100
-      }, function(){
-        $imgIconArr.eq(1).hide();
+  $(function () {
+    var $imgIconArr = $('.imgIcon');
+    console.log($imgIconArr);
+    console.log($imgIconArr.length);
+    var $target = $('#target');
+    $target
+      .animate({
+        left: $target.position().left + 100,
+        top: $target.position().top
+      }, function () {
+        $imgIconArr.eq(0).hide();
       }).animate({
-        left:$target.position().left + 100,
-        top:100
-      }, function(){
-        $imgIconArr.eq(2).hide();
-      }).animate({
-        left:0,
-        top:200
-      }, function(){
-        $imgIconArr.eq(3).hide();
-      }).animate({
-        left:$target.position().left + 100,
-        top:200
-      }, function(){
-        $imgIconArr.eq(0).show();
-      });
+      left: 0,
+      top: 100
+    }, function () {
+      $imgIconArr.eq(1).hide();
+    }).animate({
+      left: $target.position().left + 100,
+      top: 100
+    }, function () {
+      $imgIconArr.eq(2).hide();
+    }).animate({
+      left: 0,
+      top: 200
+    }, function () {
+      $imgIconArr.eq(3).hide();
+    }).animate({
+      left: $target.position().left + 100,
+      top: 200
+    }, function () {
+      $imgIconArr.eq(0).show();
     });
+  });
 </script>
 </body>
 </html>
