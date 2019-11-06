@@ -49,7 +49,7 @@
     style：表示具体的声明，以字符串的形式传递。
     index：表示一个索引号，表示添加样式在样式表中的索引位置，默认为 -1，表示位于样式表的末尾，该参数可以不设置。
   * */
-  sheet.addRule('.box1:before', 'background-color:green;width: 5px;');
+  sheet.addRule('.box1:before', 'background-color:red;width: 5px;');
 
   /*
   * Firefox 支持使用 insertRule() 方法添加样式。用法如下：
@@ -58,7 +58,7 @@
     rule：表示一个完整的样式字符串。
     index：与 addRule() 方法中的 index 参数作用相同，但默认为 0，放置在样式表的末尾。
   * */
-  sheet.insertRule('.box1:before{background-color:green;width: 5px;}');
+  sheet.insertRule('.box1:before{background-color:red;width: 5px;}');
 </script>
 </body>
 </html>
