@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
 </head>
 <body>
 <div id="app"></div>
 <script type="text/javascript">
-    // emoji test
-    // emoji 是4字节的 utf16字符，处理起来比较麻烦
-    // emoji 截取的问题，js 中可以用 es6 新增的utf16处理能力来实现；
-    // 可以通过String新增的遍历器特性，使用for of来遍历字符串
-    // 也可以通过Array.from方法将字符串安全的转换成数组来遍历
+  // emoji test
+  // emoji 是4字节的 utf16字符，处理起来比较麻烦
+  // emoji 截取的问题，js 中可以用 es6 新增的utf16处理能力来实现；
+  // 可以通过String新增的遍历器特性，使用for of来遍历字符串
+  // 也可以通过Array.from方法将字符串安全的转换成数组来遍历
 
-    const str = "🙄😉👌😎😎😄☹️滴滴😃😄😤🤔👉🏻👨🏼‍💼🤶🏾🙊🐚🐠asd🐋🐬🐈🦍🐖🐓233🌻🌎🌷";
-    let strArr = Array.from(str);
-    for(var i = 0; i<str.length; i++){
-        console.log(str.charAt(i));
+  const str = "🙄😉👌😎😎😄☹️滴滴😃😄😤🤔👉🏻👨🏼‍💼🤶🏾🙊🐚🐠asd🐋🐬🐈🦍🐖🐓233🌻🌎🌷";
+  let strArr = Array.from(str);
+  for (var i = 0; i < str.length; i++) {
+    console.log(str.charAt(i));
+  }
+  const $app = document.getElementById("app");
+  const emojiReg = /\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]/g;
+
+  const writeLine = line => {
+    $app.innerHTML += `<p>${line}</p>`;
+  };
+  let lineContent = [];
+
+  writeLine("----for----，一开始我的解决思路");
+  for (let i = 0, l = str.length; i < l; i++) {
+    let char = str.substr(i, 1);
+    if (emojiReg.test(char + str.substr(i + 1, 1))) {
+      char += str.substr(i++ + 1, 1);
     }
-    const $app = document.getElementById("app");
-    const emojiReg = /\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]/g;
+    lineContent.push(char);
+  }
+  writeLine(lineContent.join(" "));
 
-    const writeLine = line => {
-        $app.innerHTML += `<p>${line}</p>`;
-    };
-    let lineContent = [];
+  writeLine("----str split----");
+  writeLine(str.split(""));
 
-    writeLine("----for----，一开始我的解决思路");
-    for (let i = 0, l = str.length; i < l; i++) {
-        let char = str.substr(i, 1);
-        if (emojiReg.test(char + str.substr(i + 1, 1))) {
-            char += str.substr(i++ + 1, 1);
-        }
-        lineContent.push(char);
-    }
-    writeLine(lineContent.join(" "));
+  writeLine("----for of----");
 
-    writeLine("----str split----");
-    writeLine(str.split(""));
+  lineContent = [];
+  for (let item of str) {
+    lineContent.push(item);
+  }
+  writeLine(lineContent.join(" "));
 
-    writeLine("----for of----");
-
-    lineContent = [];
-    for (let item of str) {
-        lineContent.push(item);
-    }
-    writeLine(lineContent.join(" "));
-
-    writeLine("----Array from----");
-    writeLine(Array.from(str).join(" "));
+  writeLine("----Array from----");
+  writeLine(Array.from(str).join(" "));
 
 </script>
 </body>
