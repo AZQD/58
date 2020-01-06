@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html;">
-    <meta name="viewport"
-          content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="format-detection" content="email=no"/>
-    <meta name="format-detection" content="address=no;">
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html;">
+  <meta name="viewport"
+        content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <meta name="format-detection" content="address=no;">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <title>Title</title>
 </head>
 <style type="text/css">
-    video{
-        background-color: red;
-    }
+  video {
+    background-color: red;
+  }
 </style>
 <body>
-<video src="video/test.mp4" controls autoplay  id="video"></video>
+<video src="video/test.mp4" controls autoplay id="video"></video>
 <script type="text/javascript">
-    var video = document.getElementById("video");
-    console.log(video.ondurationchange);//null
-    video.ondurationchange = function (ev) {
-        console.log('11');
-    }
-    console.log(video.ondurationchange);//function
+  var video = document.getElementById("video");
+  console.log(video.ondurationchange);//null
+  video.ondurationchange = function (ev) {
+    console.log('11');
+  }
+  console.log(video.ondurationchange);//function
 </script>
 </body>
 </html>
