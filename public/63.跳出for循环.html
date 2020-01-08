@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  var arr = [11, 22, 33, 44];
+  for1:
+    for (let i = 0; i < arr.length; i++) {
+      for2:
+        for (let j = 0; j < arr.length; j++) {
+          for3:
+            for (let k = 0; k < arr.length; k++) {
+              console.log(i, j, k);
+              if (k = 1) {
+                break for1;
+                // break for2;
+                // break for3;
+              }
+            }
+        }
+    }
+</script>
+</body>
+</html>
