@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  var str = "babad";
+  fun(str);
+
+
+  function fun (str) {
+    var result = '';
+    if (str.length <= 1) {
+      return str;
+    }
+    for (let i = 0; i < str.length; i++) {
+      for (let j = i; j < str.length; j++) {
+        let item = str.substring(i, j + 1);
+        console.log(item);
+        if (item === item.split('').reverse().join('')) {
+          result = item.length > result.length ? item : result;
+        }
+      }
+    }
+    return result;
+  }
+
+  /**
+   * @param {number[]} nums
+   * @return {number[][]}
+   */
+  console.log('---------------');
+  var threeSum = function(nums) {
+    var arr = [];
+    for(var i=0; i< nums.length; i++){
+      for(var j=i+1; j< nums.length; j++){
+        for(var k=j+1; k< nums.length; k++){
+          if(nums[i] + nums[j] + nums[k] === 0){
+            let temp = [nums[i], nums[j], nums[k]].sort((v1, v2) => v1 - v2);
+            if(!arr.length){
+              arr.push(temp);
+            }else{
+
+              for(let m = 0; m<arr.length; m++){
+                if((temp[0] === arr[m][0]) && (temp[1] === arr[m][1]) && (temp[2] === arr[m][2])){
+                  console.log(temp);
+                }else{
+                  arr.push(temp);
+                  break;
+                }
+              }
+            }
+            // if(!arr.includes(temp)){
+            //   arr.push(temp);
+            // }
+          }
+        }
+      }
+    }
+    return arr;
+  };
+  var aa = threeSum([-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6]);
+  console.log(aa);
+</script>
+</body>
+</html>
