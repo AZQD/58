@@ -32,21 +32,21 @@
    * @return {number[][]}
    */
   console.log('---------------');
-  var threeSum = function(nums) {
+  var threeSum = function (nums) {
     var arr = [];
-    for(var i=0; i< nums.length; i++){
-      for(var j=i+1; j< nums.length; j++){
-        for(var k=j+1; k< nums.length; k++){
-          if(nums[i] + nums[j] + nums[k] === 0){
+    for (var i = 0; i < nums.length; i++) {
+      for (var j = i + 1; j < nums.length; j++) {
+        for (var k = j + 1; k < nums.length; k++) {
+          if (nums[i] + nums[j] + nums[k] === 0) {
             let temp = [nums[i], nums[j], nums[k]].sort((v1, v2) => v1 - v2);
-            if(!arr.length){
+            if (!arr.length) {
               arr.push(temp);
-            }else{
+            } else {
 
-              for(let m = 0; m<arr.length; m++){
-                if((temp[0] === arr[m][0]) && (temp[1] === arr[m][1]) && (temp[2] === arr[m][2])){
+              for (let m = 0; m < arr.length; m++) {
+                if ((temp[0] === arr[m][0]) && (temp[1] === arr[m][1]) && (temp[2] === arr[m][2])) {
                   console.log(temp);
-                }else{
+                } else {
                   arr.push(temp);
                   break;
                 }
@@ -61,7 +61,7 @@
     }
     return arr;
   };
-  var aa = threeSum([-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6]);
+  var aa = threeSum([-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6]);
   console.log(aa);
 </script>
 </body>
