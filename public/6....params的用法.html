@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html;">
-    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="format-detection" content="email=no"/>
-    <meta name="format-detection" content="address=no;">
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html;">
+  <meta name="viewport"
+        content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <meta name="format-detection" content="address=no;">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <title>Title</title>
 </head>
 <body>
 ...params
 
 <script type="text/javascript">
-    /**.
-     * ..params的用法：
-     * 可变参数，参数个数可以任意变化
-     */
-    var params = params || {c:3}
-    var obj = {
-        a:1,
-        b:2,
-        ...params
-    }
-    console.log(obj);
+  /**.
+   * ...params的用法：
+   * 可变参数，参数个数可以任意变化
+   */
+  var params = params || {c: 3}
+  var obj = {
+    a: 1,
+    b: 2,
+    ...params
+  }
+  console.log(obj);
 </script>
 </body>
 </html>
