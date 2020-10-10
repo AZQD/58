@@ -11,10 +11,10 @@
   let arr1 = Object.assign([], arr).sort();
   let arr2 = Object.assign([], arr).sort((v1, v2) => v1 - v2);
   let arr3 = Object.assign([], arr).sort((v1, v2) => v2 - v1);
-  console.log(arr);
-  console.log(arr1);
-  console.log(arr2);
-  console.log(arr3);
+  console.log(arr); // 原数组
+  console.log(arr1); // 不标准
+  console.log(arr2); // 由小到大
+  console.log(arr3); // 由大到小
 </script>
 </body>
 </html>
